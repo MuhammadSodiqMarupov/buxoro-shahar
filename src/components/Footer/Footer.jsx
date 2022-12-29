@@ -3,6 +3,8 @@ import twitter from "../../Images/twitter.svg"
 import facebook from "../../Images/facebook.svg"
 import youtube from "../../Images/youtube.svg"
 import instagram from "../../Images/instagram.svg"
+import {YMaps , Map ,Placemark} from "react-yandex-maps";
+
 function Footer() {
     return (
         <div className="Footer">
@@ -31,6 +33,17 @@ function Footer() {
                        </div>
 
                 </div>
+                <YMaps>
+                    <div className="yandex_map">
+                        <Map defaultState={{
+                            center : [39.763972, 64.439139] ,
+                            zoom: 15
+                        }}>
+                            <Placemark geometry={[39.763972, 64.439139]} />
+
+                        </Map>
+                    </div>
+                </YMaps>
             </div>
         </div>
     );
