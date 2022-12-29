@@ -1,14 +1,88 @@
 .photoVideo{
   height: 538px;
   width: 100%;
+  padding-top: 20px;
   .photoContainer{
-    max-width: 1660px;
+    max-width: 1440px;
     height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
     gap: 30px;
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      .content-header {
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        .link {
+          color: var(--blueReal);
+          font-weight: 550;
+          font-size: 16px;
+          @media (max-width: 350px) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .content-swiper {
+      .swiper-wrapper {
+        list-style: none;
+      }
+      .my-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+        img {
+          width: 80%;
+        }
+        .date {
+          width: 90px;
+          border: none;
+          background-color: var(--white);
+          color: var(--blueReal);
+          font-weight: 550;
+          font-size: 11px;
+          line-height: 11px;
+          height: 20px;
+          padding: 4px 8px;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          border-radius: 4px;
+        }
+        .descr {
+          color: var(--black);
+          font-weight: 550;
+          font-size: 16px;
+          line-height: 24px;
+          width: 100%;
+        }
+        &:hover:before {
+          transform: scale(1) rotate(125deg);
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          background-image: url("../../Images/player.svg");
+          top: 23%;
+          left: 32%;
+          cursor: pointer;
+          width: 64px;
+          height: 64px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transform: scale(0) rotate(380deg);
+          transition: 0.4s all;
+        }
+      }
+    }
     .title{
       font-weight: 400;
       font-size: 32px;
@@ -19,42 +93,21 @@
       display: inline-flex;
       gap: 20px;
       position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        opacity: 0.4;
-        transform: scale(1);
-        width: 100%;
-        height: 2px;
-        background-color: var(--blueReal);
-        bottom: 0;
-      }
       h1{
         transition: 0.2s all;
         cursor: pointer;
         padding:2px;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 16px;
+        letter-spacing: 0.0015em;
       }
-      .switched_right {
-        display: inline;
+      .switched {
+        color: var(--blueReal);
+        border-bottom: 4px solid var(--blueReal);
 
-        color: var(--blueReal);
-        &::before {
-          content: "";
-          position: absolute;
-          height: 2px;
-          width: 50%;
-          bottom: 0;
-          right: 0px;
-          transition: 0.2s all;
-          background-color: var(--blueReal);
-          transform-origin: right;
-        }
-      }
-      .switched_left , .switched_right::before{
-        transition: 0.4s all;
-        left: 0;
-        color: var(--blueReal);
       }
     }
+
   }
 }
