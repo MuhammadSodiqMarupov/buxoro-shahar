@@ -1,8 +1,9 @@
 import "./Section5.scss"
-import check from "../../Images/check.svg"
-import emblem from "../../Images/Emblem_of_Uzbekistan.svg"
-import adliya from "../../Images/adliya.svg"
-import lexuz from "../../Images/lex.svg"
+import check from "../../Images/check.jpg"
+import emblem from "../../Images/Embel_Of_Uzbekistan.jpg"
+import adliya from "../../Images/adlya.jpg"
+import lexuz from "../../Images/lex (1).jpg"
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
 function Section5() {
@@ -12,27 +13,27 @@ function Section5() {
                 <h1 className="title"> ✅ Foydali havolalar </h1>
                 <div className="bottom">
                     <div className="card1">
-                        <img src={check} alt=""/>
+                        <LazyLoadImage src={check} effect={"blur"}/>
                         <p> Yagona interaktiv davlat xizmatlari portali </p>
                     </div>
                     <div className="card2">
-                        <img src={emblem} alt=""/>
+                        <LazyLoadImage src={emblem} effect={"blur"} />
                         <p> Davlat xaridlari elektron tizimi </p>
                     </div>
                     <div className="card2">
-                        <img src={adliya} alt="adliyajon"/>
+                        <LazyLoadImage src={adliya} effect={"blur"}/>
                         <p> O‘zbekiston Respublikasi Adliya Vazirligi </p>
                     </div>
                     <div className="card2">
-                        <img src={emblem} alt=""/>
+                        <LazyLoadImage src={emblem} effect={"blur"}/>
                         <p> Tadbirkorlar virtual ofisi </p>
                     </div>
                     <div className="card2">
-                        <img src={lexuz} alt=""/>
+                        <LazyLoadImage src={lexuz} effect={"blur"}/>
                         <p> Oʻzbekiston Respublikasi Qonun hujjatlari maʼlumotlari milliy bazasi </p>
                     </div>
                     <div className="card2">
-                        <img src={emblem} alt=""/>
+                        <LazyLoadImage src={emblem} effect={"blur"}/>
                         <p> Ijro intizomi Idoralararo yagona elektron tizim </p>
                     </div>
                 </div>

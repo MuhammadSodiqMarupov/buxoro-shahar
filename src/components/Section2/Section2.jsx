@@ -1,12 +1,15 @@
 import "./Section2.scss"
-import galochka from "../../Images/Слой_2.svg"
-import boshliq from "../../Images/boshliq.svg"
+import galochka from "../../Images/galochka.svg"
+import boshliq from "../../Images/boshliq.jpg"
+import {LazyLoadImage} from "react-lazy-load-image-component";
 function Section2() {
     return (
         <div className="Section2">
             <div className="S2Container">
                 <div className="left_part">
-                <h1><img src={galochka} alt=""/> Jamol Shuhratovich Nosirov </h1>
+                <h1>
+                    <LazyLoadImage src={galochka} effect={"blur"}/>
+                    Jamol Shuhratovich Nosirov </h1>
                     <h1> Buxoro shahar hokimi </h1>
                     <div className="TextsCard">
                         <p> ☑️ Jamol Nosirov 1985 yil 12 iyunda Buxoro shahrida tavallud topgan. </p>
@@ -20,7 +23,7 @@ function Section2() {
                     </div>
                 </div>
                 <div className="right_part">
-                    <img className="boshliq" src={boshliq} alt="cap"/>
+                    <LazyLoadImage src={boshliq} effect={"blur"} width={488} height={439}/>
                     <button><i className="fa-regular fa-envelope"></i>  Elektron murojjat </button>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 import "./Section3.scss"
-import minor from "../.././Images/minor.svg"
-import magazine from "../../Images/magazine.svg"
-import minor2 from "../../Images/minor2.svg"
+import minor from "../.././Images/minor.jpg"
+import magazine from "../../Images/magazine.jpg"
+import minor2 from "../../Images/minor2.jpg"
+import {LazyLoadImage} from "react-lazy-load-image-component";
 function Section3() {
     return (
         <div className="Section3">
@@ -16,7 +17,7 @@ function Section3() {
                 </div>
                 <div className="api-items">
                     <div className="content">
-                        <img src={minor} alt=""/>
+                        <LazyLoadImage src={minor} effect={"blur"}/>
                         <button className="calendar-date">
                             12.12.2022
                         </button>
@@ -30,7 +31,7 @@ function Section3() {
                     </div>
                     <div className="sideBar">
                         <div className="item">
-                            <img src={magazine} alt=""/>
+                            <LazyLoadImage src={magazine} effect={"blur"}/>
                             <div className="calendar-date">
                                 12.12.2022
                             </div>
@@ -38,7 +39,7 @@ function Section3() {
                                 WordPress News Magazine Charts the Most Chic and Max 2 qator yozuv bo‘lad...                            </div>
                         </div>
                         <div className="item">
-                            <img src={magazine} alt=""/>
+                            <LazyLoadImage src={minor2} effect={"blur"}/>
                             <div className="calendar-date">
                                 12.12.2022
                             </div>

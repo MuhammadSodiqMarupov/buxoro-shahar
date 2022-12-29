@@ -1,9 +1,10 @@
 import "./Footer.scss"
-import twitter from "../../Images/twitter.svg"
-import facebook from "../../Images/facebook.svg"
-import youtube from "../../Images/youtube.svg"
-import instagram from "../../Images/instagram.svg"
+import twitter from "../../Images/twitter 1.svg"
+import facebook from "../../Images/facebook 1.svg"
+import youtube from "../../Images/youtube 1.svg"
+import instagram from "../../Images/instagram 1.svg"
 import {YMaps , Map ,Placemark} from "react-yandex-maps";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 function Footer() {
     return (
@@ -15,10 +16,10 @@ function Footer() {
                         <h1 className="callNumber"> +998 90 123 45 67 </h1>
                    </div>
                     <div className="apps">
-                        <button><img src={twitter} alt=""/> </button>
-                        <button><img src={instagram} alt=""/> </button>
-                        <button><img src={facebook} alt=""/> </button>
-                        <button><img src={youtube} alt=""/> </button>
+                        <button><LazyLoadImage src={twitter} effect={"blur"}/></button>
+                        <button><LazyLoadImage src={instagram} effect={"blur"}/> </button>
+                        <button><LazyLoadImage src={facebook} effect={"blur"} /> </button>
+                        <button><LazyLoadImage src={youtube} effect={"blur"}/> </button>
                     </div>
                     <button className="btn"> <i className="fa-regular fa-envelope"></i>  Elektron murojjat</button>
                 </div>

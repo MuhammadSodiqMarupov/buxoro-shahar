@@ -1,13 +1,15 @@
 import "./App.css"
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import Section2 from "./components/Section2/Section2";
-import Section3 from "./components/Section3/Section3";
-import Section4 from "./components/Section4/Section4";
-import FOTO_VIDEO_GALERY from "./components/FOTO_VIDEO_GALERY/FOTO_VIDEO_GALERY";
-import Section5 from "./components/Section5/Section5";
-import Footer from "./components/Footer/Footer";
+import React from "react";
 import {Routes,Route} from "react-router-dom";
+import 'react-lazy-load-image-component/src/effects/blur.css';
+const Header = React.lazy(()=>import('./components/Header/Header'))
+const Navbar = React.lazy(()=>import('./components/Navbar/Navbar'))
+const Section2 = React.lazy(()=>import('./components/Section2/Section2'))
+const Section3 = React.lazy(()=>import('./components/Section3/Section3'))
+const Section4 = React.lazy(()=>import('./components/Section4/Section4'))
+const Section5 = React.lazy(()=>import('./components/Section5/Section5'))
+const FOTO_VIDEO_GALERY = React.lazy(()=>import('./components/FOTO_VIDEO_GALERY/FOTO_VIDEO_GALERY'))
+const Footer = React.lazy(()=>import("./components/Footer/Footer"));
 function App() {
   return (
       <Routes>
