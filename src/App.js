@@ -17,7 +17,7 @@ function App() {
         <Section2/>
         <Section3/>
         <Section4/>
-        {/*<FOTO_VIDEO_GALERY/>*/}
+        <FOTO_VIDEO_GALERY/>
         <Section5/>
         <Footer/>
       </>}/>
