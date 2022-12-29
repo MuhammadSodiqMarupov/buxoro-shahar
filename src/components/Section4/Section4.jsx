@@ -1,27 +1,28 @@
 import "./Section4.scss"
-import pencil from "../../Images/pencil.svg"
+import pencil from "../../Images/Pencil.svg"
 import star from "../../Images/star.svg"
-import bloknot from "../../Images/bloknot.svg"
+import bloknot from "../../Images/Bloknot.svg"
 import car from "../../Images/car.svg"
+import {LazyLoadImage} from "react-lazy-load-image-component";
 function Section4(props) {
     return (
         <div className="Section4">
             <div className="S4Container">
                 <div className="LeftCardsMy">
                 <div className="item">
-                    <img src={pencil} alt=""/>
+                    <LazyLoadImage src={pencil} effect={"blur"}/>
                     <p> Fuqaro murojaatlari bilan ishlash (Virtual qabulxona) </p>
                 </div>
                     <div className="item">
-                        <img src={bloknot} alt=""/>
+                        <LazyLoadImage src={bloknot} effect={"blur"}/>
                         <p> Fuqarolardan taklif va mulohazalarini olish </p>
                     </div>
                     <div className="item">
-                        <img src={star} alt=""/>
+                        <LazyLoadImage src={star} effect={"blur"}/>
                         <p> Hududlarni rivojlantirish xizmati </p>
                     </div>
                     <div className="item">
-                        <img src={car} alt=""/>
+                        <LazyLoadImage src={car} effect={"blur"}/>
                         <p> Shahar transporti bo‘yicha ma’lumot </p>
                     </div>
                 </div>
