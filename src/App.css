@@ -9,3 +9,6 @@
     --blueReal:#2D40D9;
     --white:#EFF1FC;
 }
+button{
+    border: none;
+}
