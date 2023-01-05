@@ -38,6 +38,9 @@
       align-items: center;
 
       gap: 20px;
+      img {
+        cursor: pointer;
+      }
     }
     .right {
       display: flex;
@@ -78,4 +81,16 @@
       }
     }
   }
+}
+body {
+}
+.hamburger {
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  width: 100vw;
+  background-color: #000;
+  height: 100%;
+  bottom: 0;
+  overflow: hidden;
 }
