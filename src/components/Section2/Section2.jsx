@@ -23,7 +23,7 @@ function Section2() {
                     </div>
                 </div>
                 <div className="right_part">
-                    <LazyLoadImage src={boshliq} effect={"blur"} width={488} height={439}/>
+                    <img src={boshliq} className={"boshliq"} alt=""/>
                     <button><i className="fa-regular fa-envelope"></i>  Elektron murojjat </button>
                 </div>
             </div>
