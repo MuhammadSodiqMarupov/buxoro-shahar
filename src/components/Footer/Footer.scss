@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  border: 5px solid;
+  @media (max-width: 1080px) {
+    min-height: 600px;
+  }
   @media (max-width: 788px) {
     height: 568px;
   }
@@ -24,21 +28,17 @@
     display: flex;
     position: relative;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    border: 5px solid red;
 
-.yandex_map {
-  width: 590px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
 
 .lastLeft {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-evenly;
-
+  justify-content: center;
+  gap: 28px;
   .apps {
     display: flex;
     gap: 8px;
@@ -81,8 +81,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-evenly;
-
+  justify-content: center;
+    gap: 32px;
   .other {
     h1 {
       font-weight: 550;

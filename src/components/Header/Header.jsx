@@ -22,6 +22,7 @@ function Header(props) {
     };
     return (
         <>
+            <div className="hamburger"></div>
             <div className="Header">
                 <div className="myContainer">
                     <div className="left">
