@@ -1,11 +1,11 @@
 import "./Header.scss"
-import logo from "../../Images/logo.svg"
+import logo from "../../Images/logo.jpg"
 import {Dropdown} from "react-bootstrap";
 import DropdownToggle from "react-bootstrap/DropdownToggle";
 import DropdownMenu from "react-bootstrap/DropdownMenu";
 import DropdownItem from "react-bootstrap/DropdownItem";
 import {useEffect, useState} from "react";
-import search from '../../Images/search.svg';
+import search from '../../Images/search.jpg';
 function Header(props) {
     const [showes,setShowes] = useState([]);
     const [langShow,setLangShow] = useState(false);
@@ -49,7 +49,7 @@ function Header(props) {
         <div className="Header">
             <div className="myContainer">
             <div className="left">
-                <img src={logo} alt="Logojon"/>
+                <img src={logo} width={32} height={32} alt="Logojon"/>
                 {showes.map((item,index)=><Dropdown key={index} show={item.show} onMouseOver={()=>dropDownOpen(index)} onMouseLeave={()=>dropDownClose(index)}>
                     <DropdownToggle className={"myDropdown"}>
                         {item.text}
@@ -69,7 +69,7 @@ function Header(props) {
             </div>
                 <div className="right">
                     <button className={"searchButton"}>
-                        <img src={search} alt="Searchjon"/>
+                        <img width={24} height={24} src={search} alt="Searchjon"/>
                     </button>
                     <Dropdown className={"langButton"} show={langShow} onMouseLeave={()=>setLangShow(false)} onMouseOver={()=>setLangShow(true)}>
                         <DropdownToggle className={"myDropdown"}>

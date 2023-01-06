@@ -1,16 +1,21 @@
 import "./Foto.scss"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/swiper-bundle.css'
-import minor from '../../Images/minor.svg';
+import minor from '../../Images/minor.jpg';
 import {Link} from "react-router-dom";
 import player from '../../Images/player.svg';
 import ModalVideo from "react-modal-video";
 import 'react-modal-video/scss/modal-video.scss';
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 function FotoVideoGalery(props) {
     const [switcher, setSwitcher] = useState(false);
     const [videoModal, setVideoModal] = useState(false);
+    function media() {
+        const mediaQueryList = window.matchMedia("max-width:700px");
+    }
+    useEffect(()=>{},[])
     const [slides, setSlides] = useState([
         {
             date: "12.12.2022",
@@ -61,11 +66,11 @@ function FotoVideoGalery(props) {
                     <div className="content-swiper">
                         <ModalVideo channel='youtube' isOpen={videoModal} videoId='L61p2uyiMSo'
                                     onClose={() => setVideoModal(false)}/>
-                        <Swiper id={"main"} tag={"section"} spaceBetween={0} slidesPerView={3} wrapperTag={"ul"}>
+                        <Swiper id={"main"} tag={"section"}  slidesPerView={3} spaceBetween={0} wrapperTag={"ul"}>
                             {slides.map((item, index) => <SwiperSlide className={'my-slide'} tag={"li"}
                                                                       key={`slide-${index}`}>
                                 <div className="top">
-                                    <img src={minor} alt="IMAGE"/>
+                                    <LazyLoadImage src={minor}/>
                                     {switcher ? "" :
                                         <img onClick={() => setVideoModal(true)} src={player} className={"player"}
                                              alt=""/>}
