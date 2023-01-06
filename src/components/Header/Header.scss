@@ -18,7 +18,7 @@
       padding: 0;
       display: flex;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 20px;
       color: var(--black);
       align-items: center;
@@ -60,6 +60,7 @@
         @media (max-width: 1140px){
           display: flex;
         }
+
         }
       }
       .murojaatButton {
