@@ -17,10 +17,7 @@ function Header(props) {
         props.refresh();
     }
 
-    function menuOpen() {
-
-    }
-
+const menuOpen = ()=>document.ham
     return (
         <>
             <div className="hamburger">
@@ -29,7 +26,7 @@ function Header(props) {
             <div className="Header">
                 <div className="myContainer">
                     <div className="left">
-                        <img src={logo} onClick={()=>navigate("/menu")} width={32} height={32} alt="Logojon"/>
+                        <img src={logo} onClick={menuOpen} width={32} height={32} alt="Logojon"/>
                         {props.navbarData.length!=0?props.navbarData.map((item,index)=><Dropdown key={index} show={props.titles[index]} onMouseOver={()=>{
                             props.titles[index]=true
                             props.set([...props.titles]);
