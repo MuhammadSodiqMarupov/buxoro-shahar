@@ -28,11 +28,11 @@ function Header(props) {
             <div className="Header">
                 <div className="myContainer">
                     <div className="left">
-                        <div className={hamburger ? "left-header_active" : "left-header"}>
+                        <div>
                             <img src={logo} onClick={() => hamburger ? menuOpen('0vh') : menuOpen('100vh')} width={32}
                                  height={32} alt="Logojon"/>
                             {hamburger ?
-                                <p onClick={() => menuOpen('0')}>CLOSE</p>
+                                <p className={"close_menu"} onClick={() => menuOpen('0')}>CLOSE</p>
                                 : ""}
                         </div>
                         {props.navbarData.length != 0 ? props.navbarData.map((item, index) => <Dropdown key={index}
