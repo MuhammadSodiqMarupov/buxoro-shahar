@@ -17,7 +17,7 @@ function Header(props) {
         props.refresh();
     }
 
-const menuOpen = ()=>document.ham
+const menuOpen = ()=>document.querySelector(".hamburger").style.height = '100vh';
     return (
         <>
             <div className="hamburger">
