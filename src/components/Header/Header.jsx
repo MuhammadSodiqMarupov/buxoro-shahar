@@ -6,12 +6,26 @@ import DropdownMenu from "react-bootstrap/DropdownMenu";
 import DropdownItem from "react-bootstrap/DropdownItem";
 import {useState} from "react";
 import search from '../../Images/search.jpg';
-
+import { Link } from "react-router-dom";
 function Header(props) {
     const [langShow, setLangShow] = useState(false);
     const [hamburger, setHamburger] = useState(false);
+    const [selectTxt,setSelectTxt] = useState(localStorage.getItem("langType")?getFullTxtFromStorage(localStorage.getItem("langType")):"O‘Z");
 
-    function changeLang(s) {
+    function getFullTxtFromStorage(StringTxt) {
+        if(StringTxt==='1') {
+            return "O‘Z";
+        }else if(StringTxt==='2') {
+            return "Cyrl"
+        }else if(StringTxt==='3') {
+            return 'Rus'
+        }else if(StringTxt==='4') {
+            return "Eng"
+        }
+    }
+
+    function changeLang(s,fullTxt) {
+        setSelectTxt(fullTxt);
         localStorage.setItem("langType", s);
         props.refresh();
     }
@@ -22,7 +36,27 @@ function Header(props) {
     };
     return (
         <>
-            <div className="hamburger"></div>
+
+            <div className="hamburger">
+            {hamburger && props.navSideBar?.map((item, index) => <div className={"part"} key={index}>
+                        <h1 className={"blue"}>{item.first.title}</h1>
+                        {item.first.items.map((item1, index1) => <Link onClick={()=>{
+                            menuOpen("0vh");
+                            props.setPage(true);
+                        }} key={index1}
+                            to={props.titlesCopy[index]?.first.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
+                            <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                        </Link>)}
+                        <h1 className={"blue"}>{item.second.title}</h1>
+                        {item.second.items.map((item1, index1) => item1.title ?
+                            <Link onClick={()=>{
+                                menuOpen("0vh");
+                                props.setPage(true);
+                            }} key={index1} to={props.titlesCopy[index]?.second.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
+                                <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                            </Link> : "")}
+                    </div>)}
+            </div>
             <div className="Header">
                 <div className="myContainer">
                     <div className="left">
@@ -33,7 +67,7 @@ function Header(props) {
                                 <p className={"close_menu"} onClick={() => menuOpen('0')}>CLOSE</p>
                                 : ""}
                         </div>
-                        {props.navbarData.length != 0 ? props.navbarData.map((item, index) => <Dropdown key={index}
+                        {props.navbarData?.length != 0 ? props.navbarData.map((item, index) => <Dropdown key={index}
                                                                                                         show={props.titles[index]}
                                                                                                         onMouseOver={() => {
                                                                                                             props.titles[index] = true
@@ -46,11 +80,11 @@ function Header(props) {
                             <DropdownToggle className={"myDropdown"}>
                                 {item.title}
                             </DropdownToggle>
-                            <DropdownMenu>
+                            {item?.items?.length ? <DropdownMenu>
                                 {item.items.map((item1, index) =>
                                     <DropdownItem key={index}>{item1.title}</DropdownItem>
                                 )}
-                            </DropdownMenu>
+                            </DropdownMenu> : ""}
                         </Dropdown>) : ''}
                     </div>
                     <div className="right">
@@ -60,13 +94,13 @@ function Header(props) {
                         <Dropdown className={"langButton"} show={langShow} onMouseLeave={() => setLangShow(false)}
                                   onMouseOver={() => setLangShow(true)}>
                             <DropdownToggle className={"myDropdown"}>
-                                O‘Z
+                                {selectTxt}
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem onClick={() => changeLang('1')}>O‘Z</DropdownItem>
-                                <DropdownItem onClick={() => changeLang('2')}>Cyrl</DropdownItem>
-                                <DropdownItem onClick={() => changeLang('3')}>Rus</DropdownItem>
-                                <DropdownItem onClick={() => changeLang('4')}>Eng</DropdownItem>
+                                <DropdownItem onClick={() => changeLang('1',"O‘Z")}>O‘Z</DropdownItem>
+                                <DropdownItem onClick={() => changeLang('2',"Cyrl")}>Cyrl</DropdownItem>
+                                <DropdownItem onClick={() => changeLang('3',"Rus")}>Rus</DropdownItem>
+                                <DropdownItem onClick={() => changeLang('4',"Eng")}>Eng</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                         <button className={"murojaatButton"}>
