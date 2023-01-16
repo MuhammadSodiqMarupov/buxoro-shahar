@@ -43,6 +43,7 @@ function App() {
 
   function getBackendData() {
     setShowes([]);
+      setNews([])
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType??'1';
     headerAPI("api/home/menus",langType).then(res=>{
@@ -73,13 +74,13 @@ function App() {
       setTitltes([...copy2]);
     })
 
-
+      let copy = [];
     headerAPI("api/post/1",langType).then(({data})=>{
       for(let i = 0;i < 3;i++) {
         let list = data.data.list;
-        news.push(list[i]);
+        copy.push(list[i]);
       }
-      setNews([...news]);
+      setNews([...copy]);
     })
   }
 

@@ -6,5 +6,5 @@ const headerAPI = (url,langType)=>axios.get("http://bukhara.xushnazarov.uz/"+url
         langType,
     }
 });
-export const domen = "http://bukhara.xushnazarov.uz"
+export const domen = "http://bukhara.xushnazarov.uz/"
 export default headerAPI;

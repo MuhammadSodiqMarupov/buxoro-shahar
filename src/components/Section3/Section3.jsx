@@ -19,7 +19,7 @@ function Section3(props) {
                 </div>
                 <div className="api-items">
                     <div className="content">
-                        {/* <LazyLoadImage src={props.data.length!=0?domen+props.data[0].imageUrl:''} effect={"blur"}/> */}
+                         <LazyLoadImage src={props.data.length!=0?domen+props.data[0].imageUrl:''} effect={"blur"}/>
                         <button className="calendar-date">
                             {props.data.length!=0?props.data[0].date.replaceAll("-","."):''}
                         </button>
@@ -32,7 +32,7 @@ function Section3(props) {
                     </div>
                     <div className="sideBar">
                         <div className="item">
-                            <LazyLoadImage src={magazine} effect={"blur"}/>
+                            <LazyLoadImage src={props.data.length!=0?domen+props.data[1].imageUrl:''} effect={"blur"}/>
                             <div className="calendar-date">
                             {props.data.length!=0?props.data[1].date.replaceAll("-","."):''}
                             </div>
@@ -41,7 +41,7 @@ function Section3(props) {
                             </div>
                         </div>
                         <div className="item">
-                            <LazyLoadImage src={minor2} effect={"blur"}/>
+                            <LazyLoadImage src={props.data.length!=0?domen+props.data[2].imageUrl:''} effect={"blur"}/>
                             <div className="calendar-date">
                             {props.data.length!=0?props.data[2].date.replaceAll("-","."):''}
                             </div>
