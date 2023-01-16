@@ -5,7 +5,6 @@ import minor2 from "../../Images/minor2.jpg"
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import { domen } from "../../headerAPI";
 function Section3(props) {
-    console.log(props);
     return (
         <div className="Section3">
             <div className="S3Container">

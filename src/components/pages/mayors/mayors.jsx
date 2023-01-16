@@ -5,7 +5,7 @@ const Mayors = (props) => {
     return (
         <div className='mayors'>
             <div className="container">
-                <DynamicSideBar object={props.data} />
+                <DynamicSideBar  object={props.data} />
                 <div className="content">
                 </div>
             </div>

@@ -118,7 +118,7 @@ function App() {
         <Section5/>
         </>}
         <Outlet/>
-        {/*<Footer/>*/}
+        <Footer/>
       </>}>
       <Route path="/information-service" element={<Xizmatlar data={getDataFilter("information-service")}/>}/>
       <Route path="/address" element={<Address data={getDataFilter("address")}/>}/>
