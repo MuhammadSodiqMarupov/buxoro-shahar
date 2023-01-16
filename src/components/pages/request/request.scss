@@ -5,11 +5,9 @@
     max-width: 1600px;
     height: 100%;
     margin: 0 auto;
-    border: 5px solid red;
-    .card{
+    .myCard{
       height: 100%;
       width: 880px;
-      border: 5px solid;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -37,7 +35,6 @@
         input{
           height: 48px;
           width: 712px;
-          border: 1px solid #2D40D9;
           border-radius: 6px;
           padding: 10px;
         }
@@ -78,4 +75,42 @@
       }
     }
   }
+}
+input {
+  outline: none;
+  border: none;
+  background-color: #F9F9F9;
+  transition: 0.3s all;
+}
+input:focus {
+  border: 1px solid #2D40D9;
+  background-color: #fff;
+  transition: 0.4s all;
+}
+.lastBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .btn__box {
+    display: flex;
+    gap: 20px;
+    .send {
+      color: white;
+      background-color: #2D40D9;
+      border-radius: 8px;
+      border: none;
+      width: 468px;
+      height: 48px;
+    }
+    .file {
+      width: 224px;
+      height: 48px;
+      background-color: #F7F9FE;
+      border: 1px solid #EFF3FD;
+      border-radius: 6px;
+    }
+  }
+}
+.file__svg {
+  margin-right: 10px; 
 }
