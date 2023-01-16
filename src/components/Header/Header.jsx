@@ -7,10 +7,13 @@ import DropdownItem from "react-bootstrap/DropdownItem";
 import {useState} from "react";
 import search from '../../Images/search.jpg';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Header(props) {
     const [langShow, setLangShow] = useState(false);
     const [hamburger, setHamburger] = useState(false);
     const [selectTxt,setSelectTxt] = useState(localStorage.getItem("langType")?getFullTxtFromStorage(localStorage.getItem("langType")):"O‘Z");
+
+    const navigate = useNavigate();
 
     function getFullTxtFromStorage(StringTxt) {
         if(StringTxt==='1') {
@@ -81,7 +84,9 @@ function Header(props) {
                             </DropdownToggle>
                             {item?.items?.length ? <DropdownMenu>
                                 {item.items.map((item1, index) =>
-                                    <DropdownItem key={index}>{item1.title}</DropdownItem>
+                                    <DropdownItem key={index} onClick={()=>{
+                                        navigate(item1.page);
+                                    }}>{item1.title}</DropdownItem>
                                 )}
                             </DropdownMenu> : ""}
                         </Dropdown>) : ''}
