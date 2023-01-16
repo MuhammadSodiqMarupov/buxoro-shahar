@@ -110,6 +110,9 @@
 }
 
 .hamburger {
+  background-image: url('../../Images/gerbBG.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   position: fixed;
   height: 0vh;
   transition: 0.4s all;

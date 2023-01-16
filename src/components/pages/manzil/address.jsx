@@ -5,7 +5,7 @@ const Address = (props) => {
     return (
         <div className='address'>
             <div className="container">
-                <DynamicSideBar setPage={props.set} object={props.data}/>
+                <DynamicSideBar object={props.data}/>
                 <div className="address-content">
                     
                 </div>
