@@ -36,6 +36,7 @@ function Header(props) {
     };
     return (
         <>
+
             <div className="hamburger">
             {hamburger && props.navSideBar?.map((item, index) => <div className={"part"} key={index}>
                         <h1 className={"blue"}>{item.first.title}</h1>
@@ -88,7 +89,7 @@ function Header(props) {
                     </div>
                     <div className="right">
                         <button className={"searchButton"}>
-                            <img width={24} height={24} src={search} alt="Searchjon"/>
+                            <img width={20} height={24} src={search} alt="Searchjon"/>
                         </button>
                         <Dropdown className={"langButton"} show={langShow} onMouseLeave={() => setLangShow(false)}
                                   onMouseOver={() => setLangShow(true)}>

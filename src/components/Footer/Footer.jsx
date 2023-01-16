@@ -34,17 +34,19 @@ function Footer() {
                        </div>
 
                 </div>
-                <YMaps>
-                    <div className="yandex_map">
-                        <Map defaultState={{
-                            center : [39.763972, 64.439139] ,
-                            zoom: 15
-                        }}>
-                            <Placemark geometry={[39.763972, 64.439139]} />
+                <div className="right_map">
+                    <YMaps>
+                        <div className="yandex_map">
+                            <Map defaultState={{
+                                center : [39.763972, 64.439139] ,
+                                zoom: 15
+                            }}>
+                                <Placemark geometry={[39.763972, 64.439139]} />
 
-                        </Map>
-                    </div>
-                </YMaps>
+                            </Map>
+                        </div>
+                    </YMaps>
+                </div>
             </div>
         </div>
     );

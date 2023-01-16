@@ -19,11 +19,11 @@ button{
 .sticky__header {
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 99999;
 }
 .sideBar__location {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
