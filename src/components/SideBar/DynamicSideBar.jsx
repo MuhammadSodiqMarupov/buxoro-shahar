@@ -20,7 +20,7 @@ const DynamicSideBar = ({ object,setPage}) => {
           <h1>{object.title}</h1>
         </div>
         <div className="content">
-            {object?.items?.map((item,index)=><Link onClick={()=>setPage(true)} key={index} className={FOUND===item.page?"current_page":""} to={"/"+item.page}>{item.title}</Link>)}
+            {object?.items?.map((item,index)=><Link key={index} className={FOUND===item.page?"current_page":""} to={"/"+item.page}>{item.title}</Link>)}
         </div>
       </div>
     </>
