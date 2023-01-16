@@ -88,6 +88,10 @@
         height: 48px;
         color: white;
         border-radius: 8px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0px;
         background: var(--blueReal);
         transition: 0.4s all;
@@ -106,6 +110,9 @@
 }
 
 .hamburger {
+  background-image: url('../../Images/gerbBG.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   position: fixed;
   height: 0vh;
   transition: 0.4s all;
