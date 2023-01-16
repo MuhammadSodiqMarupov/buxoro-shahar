@@ -42,6 +42,14 @@
   .apps {
     display: flex;
     gap: 8px;
+    button {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
     @media (max-width: 500px) {
       margin-top: 10px;
     }
