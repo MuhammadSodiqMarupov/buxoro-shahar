@@ -6,10 +6,12 @@ import { Outlet } from "react-router-dom";
 import headerAPI from "./headerAPI";
 import Header1 from "./components/Header1/Header1";
 import DynamicSideBar from "./components/SideBar/DynamicSideBar";
-import Xizmatlar from "./components/pages/viloyat-hokimligi/xizmatlar";
+import Xizmatlar from "./components/pages/xizmatlar/xizmatlar";
 import Address from "./components/pages/manzil/address";
 import Rahbariyat from "./components/pages/rahbariyat/rahbariyat";
 import Mayors from "./components/pages/mayors/mayors";
+import Request from "./components/pages/request/Request";
+import {useLocation} from "react-router-dom";
 const Header = React.lazy(()=>import('./components/Header/Header'))
 const Navbar = React.lazy(()=>import('./components/Navbar/Navbar'))
 const Section2 = React.lazy(()=>import('./components/Section2/Section2'))
@@ -26,6 +28,7 @@ function App() {
   const [navbarData,setNavbarData] = useState([]);
   const [showes,setShowes] = useState([]);
 
+    const location = useLocation();
 
   function getDataFilter(stringTitle) {
     let FOUND_OBJECT = {};
@@ -52,7 +55,6 @@ function App() {
         showes.push(false);
       })
       setShowes([...showes]);
-      console.log(res.data.data);
       setNavbarData([...res.data.data]);
       
       let copy = [];
@@ -87,12 +89,15 @@ function App() {
   function checkPage() {
     let docURL = document.URL;
     let pageNavigation = docURL.substring(docURL.lastIndexOf("/")+1);
-    if(pageNavigation) {
+    if(pageNavigation!="") {
       setAnotherPage(true)
     }else {
       setAnotherPage(false)
     }
   }
+  useEffect(()=>{
+      checkPage()
+  },[location.pathname])
   useEffect(()=>{
     checkPage();
     getBackendData();
@@ -101,8 +106,9 @@ function App() {
       <Routes>
         <Route path={"/"} element={   <>
           <div className={"sticky__header"}>
+
             <Header1/>
-            <Header setPage={setAnotherPage} titlesCopy={titles} refresh={getBackendData} navSideBar={navSideBar} navbarData={navbarData} titles={showes} set={setShowes}/>
+            <Header  titlesCopy={titles} refresh={getBackendData} navSideBar={navSideBar} navbarData={navbarData} titles={showes} set={setShowes}/>
           </div>
          { anotherPage?"":  <><Navbar/>
         <Section2/>
@@ -114,10 +120,11 @@ function App() {
         <Outlet/>
         <Footer/>
       </>}>
-      <Route path="/information-service" element={<Xizmatlar set={setAnotherPage} data={getDataFilter("information-service")}/>}/>
-      <Route path="/address" element={<Address set={setAnotherPage} data={getDataFilter("address")}/>}/>
-      <Route path="/the-leadership-of-the-regional-administration" element={<Rahbariyat set={setAnotherPage} data={getDataFilter("the-leadership-of-the-regional-administration")}/>}/>
-      <Route path="/mayors-of-cities-and-districts" element={<Mayors set={setAnotherPage} data={getDataFilter("mayors-of-cities-and-districts")}/>}/>
+      <Route path="/information-service" element={<Xizmatlar data={getDataFilter("information-service")}/>}/>
+      <Route path="/address" element={<Address data={getDataFilter("address")}/>}/>
+      <Route path="/the-leadership-of-the-regional-administration" element={<Rahbariyat data={getDataFilter("the-leadership-of-the-regional-administration")}/>}/>
+      <Route path="/mayors-of-cities-and-districts" element={<Mayors data={getDataFilter("mayors-of-cities-and-districts")}/>}/>
+            <Route path={"/request"} element={<Request/>}/>
       </Route>
       </Routes>
   );

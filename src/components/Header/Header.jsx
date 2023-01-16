@@ -42,7 +42,6 @@ function Header(props) {
                         <h1 className={"blue"}>{item.first.title}</h1>
                         {item.first.items.map((item1, index1) => <Link onClick={()=>{
                             menuOpen("0vh");
-                            props.setPage(true);
                         }} key={index1}
                             to={props.titlesCopy[index]?.first.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
                             <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
@@ -51,7 +50,6 @@ function Header(props) {
                         {item.second.items.map((item1, index1) => item1.title ?
                             <Link onClick={()=>{
                                 menuOpen("0vh");
-                                props.setPage(true);
                             }} key={index1} to={props.titlesCopy[index]?.second.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
                                 <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
                             </Link> : "")}
@@ -103,9 +101,9 @@ function Header(props) {
                                 <DropdownItem onClick={() => changeLang('4',"Eng")}>Eng</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <button className={"murojaatButton"}>
+                        <Link to={"/request"}  className={"murojaatButton"}>
                             Murojjat yuborish
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
