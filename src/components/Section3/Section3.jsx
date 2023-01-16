@@ -3,7 +3,9 @@ import minor from "../.././Images/minor.jpg"
 import magazine from "../../Images/magazine.jpg"
 import minor2 from "../../Images/minor2.jpg"
 import {LazyLoadImage} from "react-lazy-load-image-component";
-function Section3() {
+import { domen } from "../../headerAPI";
+function Section3(props) {
+    console.log(props);
     return (
         <div className="Section3">
             <div className="S3Container">
@@ -17,34 +19,34 @@ function Section3() {
                 </div>
                 <div className="api-items">
                     <div className="content">
-                        <LazyLoadImage src={minor} effect={"blur"}/>
+                        {/* <LazyLoadImage src={props.data.length!=0?domen+props.data[0].imageUrl:''} effect={"blur"}/> */}
                         <button className="calendar-date">
-                            12.12.2022
+                            {props.data.length!=0?props.data[0].date.replaceAll("-","."):''}
                         </button>
                         <div className="brief-descr">
-                            Milliy universitetdan yo‘qolgan nodir qo‘lyozmalar ishi: kutubxona rahbari ozod qilindi va yana nimadir yozilishi kerak bu yerda. Jami 3 qatorli sarlavha
+                            {props.data.length!=0?props.data[0].title:''}
                         </div>
                         <div className="descr">
-                            Apellyatsiya sudi O‘zMU Axborot-resurs markazi rahbari Irina Kislitsina kitoblarni o‘zlashtirgani tasdiqlanmagan deb topdi. Sudlanuvchining harakatlari JK 167-moddasi (talon-toroj)dan 207-moddasi (mansabga sovuqqonlik)ga qayta kvalifikatsiya qilindi.
-                            6 dekabr kuni Jinoyat ishlari bo‘yicha Toshkent shahar sudi sudlov hay’ati apellyatsiya instansiyasida O‘zbekiston Milliy universiteti Axborot-resurs markazi rahbari Irina Kislitsinaga oid ish yuzasidan apellyatsiya shikoyati ko‘rib chiqildi.
+                            {props.data.length!=0?props.data[0].berifDescription:''}
                         </div>
                     </div>
                     <div className="sideBar">
                         <div className="item">
                             <LazyLoadImage src={magazine} effect={"blur"}/>
                             <div className="calendar-date">
-                                12.12.2022
+                            {props.data.length!=0?props.data[1].date.replaceAll("-","."):''}
                             </div>
                             <div className="brief-descr">
-                                WordPress News Magazine Charts the Most Chic and Max 2 qator yozuv bo‘lad...                            </div>
+                            {props.data.length!=0?props.data[0].title:''}
+                            </div>
                         </div>
                         <div className="item">
                             <LazyLoadImage src={minor2} effect={"blur"}/>
                             <div className="calendar-date">
-                                12.12.2022
+                            {props.data.length!=0?props.data[2].date.replaceAll("-","."):''}
                             </div>
                             <div className="brief-descr">
-                                WordPress News Magazine Charts the Most Chic and Max 2 qator yozuv bo‘lad...
+                            {props.data.length!=0?props.data[0].title:''}
                             </div>
                         </div>
                     </div>

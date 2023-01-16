@@ -1,0 +1,29 @@
+.sidebar {
+    min-width: 387px;
+    max-height: 472px;
+    background: #F9F9F9;
+    border-top: 4px solid #2D40D9;
+    backdrop-filter: blur(5px);
+    padding: 20px 0px 20px 20px;
+    .header {
+        width: 100%;
+        h1 {
+            font-weight: 550;
+            font-size: 22px;
+            line-height: 28px;
+            color: #0C0C0C;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        a {
+            color: #020202;
+            text-decoration: none;
+        }
+        .current_page {
+            color: var(--blueReal);
+        }
+    }
+}
