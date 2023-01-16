@@ -1,5 +1,5 @@
 import "./Section5.scss"
-import check from "../../Images/check.jpg"
+import check from "../../Images/check.svg"
 import emblem from "../../Images/Embel_Of_Uzbekistan.jpg"
 import adliya from "../../Images/adlya.jpg"
 import lexuz from "../../Images/lex (1).jpg"
