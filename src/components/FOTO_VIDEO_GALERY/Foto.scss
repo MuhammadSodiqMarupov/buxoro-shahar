@@ -1,5 +1,5 @@
 .photoVideo {
-  height: 538px;
+  min-height: 538px;
   width: 100%;
   padding-top: 20px;
 
@@ -55,55 +55,6 @@
         position: relative;
         align-content: center;
         justify-content: center;
-
-        img {
-          width: 80%;
-        }
-
-        .date {
-          width: 90px;
-          border: none;
-          background-color: var(--white);
-          color: var(--blueReal);
-          font-weight: 550;
-          font-size: 11px;
-          line-height: 11px;
-          height: 20px;
-          padding: 4px 8px;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-          border-radius: 4px;
-        }
-
-        .descr {
-          color: var(--black);
-          font-weight: 550;
-          font-size: 16px;
-          line-height: 24px;
-          width: 100%;
-        }
-
-        .top {
-          width: 100%;
-          position: relative;
-
-          .player {
-            display: inline-block;
-            width: 30%;
-            height: 30%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-80%, -40%);
-            cursor: pointer;
-            &:hover {
-                  transition: 0.4s all;
-                  transform-origin: center;
-                  transform: scale(1.1) translate(-71%, -40%);
-            }
-          }
-        }
       }
     }
 
@@ -136,5 +87,59 @@
       }
     }
 
+  }
+}
+.content-swiper {
+
+  img {
+    width: 80%;
+  }
+}
+.date {
+  width: 90px;
+  border: none;
+  background-color: var(--white);
+  color: var(--blueReal);
+  font-weight: 550;
+  font-size: 11px;
+  line-height: 11px;
+  height: 20px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 4px;
+}
+
+.descr {
+  color: var(--black);
+  font-weight: 550;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  @media (max-width:734px) {
+    font-size: 13px;
+    padding-right: 3px;
+  }
+}
+
+.top {
+  width: 100%;
+  position: relative;
+
+  .player {
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, -40%);
+    cursor: pointer;
+    &:hover {
+          transition: 0.4s all;
+          transform-origin: center;
+          transform: scale(1.1) translate(-71%, -40%);
+    }
   }
 }
