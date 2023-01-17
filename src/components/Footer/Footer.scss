@@ -1,16 +1,13 @@
 .Footer {
-  height: 368px;
+  min-height: 368px;
   width: 100%;
   background-image: url("../../Images/backlast.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  border: 5px solid;
+
   @media (max-width: 1080px) {
     min-height: 600px;
-  }
-  @media (max-width: 788px) {
-    height: 568px;
   }
   &::before {
     content: "";
@@ -30,7 +27,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
+    gap: 20px;
 
 .lastLeft {
   display: flex;
