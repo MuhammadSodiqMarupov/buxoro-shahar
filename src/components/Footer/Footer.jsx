@@ -35,17 +35,8 @@ function Footer() {
 
                 </div>
                 <div className="right_map">
-                    <YMaps>
-                        <div className="yandex_map">
-                            <Map defaultState={{
-                                center : [39.763972, 64.439139] ,
-                                zoom: 15
-                            }}>
-                                <Placemark geometry={[39.763972, 64.439139]} />
 
-                            </Map>
-                        </div>
-                    </YMaps>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12208.338012514056!2d64.65412035095811!3d40.09582884831204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f5069cd1745df59%3A0x237f48f2c7ce0cff!2sG%60ijduvon%20Tuman%20Ichki%20Ishlar%20Bo%60limi!5e0!3m2!1sru!2suk!4v1671468877396!5m2!1sru!2suk" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
