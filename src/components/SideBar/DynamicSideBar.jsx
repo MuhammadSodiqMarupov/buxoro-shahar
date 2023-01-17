@@ -17,7 +17,7 @@ const DynamicSideBar = ({ object}) => {
     <>
       <div className="sidebar">
         <div className="header">
-          <h1>{object.title}</h1>
+          <h1>{object.hasOwnProperty('title')?object.title:"Loading...."}</h1>
         </div>
         <div className="content">
             {object?.items?.map((item,index)=><Link key={index} className={FOUND===item.page?"current_page":""} to={"/"+item.page}>{item.title}</Link>)}
