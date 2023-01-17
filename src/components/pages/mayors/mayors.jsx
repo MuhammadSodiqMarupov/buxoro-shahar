@@ -22,7 +22,7 @@ const Mayors = (props) => {
                                 <p>{item.tuman}</p>
                                 <button>Batafsil</button>
                             </div>
-                            <h3>{item.firstName}</h3>
+                            <h3 className="Name">{item.firstName}</h3>
                             <small>{item.text}</small>
                             <h1 className="other"><img src={clock} alt="" />{item.time}</h1>
                             <div className="bottom">

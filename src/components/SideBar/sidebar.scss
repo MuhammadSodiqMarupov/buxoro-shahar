@@ -1,11 +1,14 @@
 .sidebar {
-    min-width: 387px;
+    min-width: 380px;
     max-height: 472px;
     background: #F9F9F9;
     border-top: 4px solid #2D40D9;
     backdrop-filter: blur(5px);
     margin-top: 80px;
     padding: 20px 0px 20px 20px;
+    @media (max-width: 400px){
+        max-width: 200px;
+    }
     .header {
         width: 100%;
         h1 {
@@ -13,6 +16,9 @@
             font-size: 22px;
             line-height: 28px;
             color: #0C0C0C;
+            @media (max-width: 400px) {
+                font-size: 18px;
+            }
         }
     }
     .content {
