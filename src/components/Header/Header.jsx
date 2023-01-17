@@ -85,7 +85,11 @@ function Header(props) {
                                 {item.items.map((item1, index) =>
                                     <DropdownItem key={index} onClick={()=>{
                                         navigate(item1.page);
-                                    }}>{item1.title}</DropdownItem>
+                                    }}>
+                                        {item1.page.startsWith("http")?<a className="tdn " href={item1.page}>
+                                            {item1.title}
+                                        </a>:item1.title}
+                                    </DropdownItem>
                                 )}
                             </DropdownMenu> : ""}
                         </Dropdown>) : ''}
