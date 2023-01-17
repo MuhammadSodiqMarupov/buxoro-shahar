@@ -78,7 +78,6 @@
           padding: 0px 10px 0px 10px;
         }
       }
-
       .langButton {
         .dropdown-toggle {
 
@@ -100,7 +99,7 @@
         padding: 0px;
         background: var(--blueReal);
         transition: 0.4s all;
-        @media (max-width: 1140px) {
+        @media (max-width: 1000px) {
           display: none;
         }
 

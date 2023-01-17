@@ -1,6 +1,7 @@
 .request{
   height: 1150px;
   width: 100%;
+  margin-top: 32px;
   .requestContainer{
     max-width: 1600px;
     height: 100%;
@@ -13,6 +14,7 @@
       flex-direction: column;
       align-items: center;
       gap: 32px;
+      border: none;
       h1{
         font-weight: 550;
         font-size: 36px;
@@ -21,11 +23,11 @@
       p{
         width: 60vw;
         font-weight: 550;
-        font-size: 16px;
-        line-height: 24px;
+        width: 100%;
         color: #111111;
         text-align: center;
-        @media (max-width:887px) {
+        @media (max-width: 897px) {
+          font-size: 10px;
         }
       }
       .fio{
@@ -39,7 +41,7 @@
           height: 48px;
           width: 712px;
           border-radius: 6px;
-          padding: 10px;
+          padding: 10px
           @media (max-width:887px) {
             width: 612px;
           }
@@ -57,6 +59,7 @@
       .two_inp{
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
         .left{
           h3{
             font-weight: 550;
@@ -109,6 +112,52 @@
           }
           @media (max-width:426px) {
             width: 300px;
+          }
+        }
+      }
+      .lastBtn{
+        display: flex;
+        flex-direction: column;
+        h3{
+          font-weight: 550;
+          font-size: 12px;
+          line-height: 16px;
+          color: #222222;
+        }
+        .btns{
+          display: flex;
+          gap: 20px;
+          .btn1{
+            width: 224px;
+            height: 48px;
+            background: #F7F9FE;
+            border: 1px solid #EFF3FD;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:11px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.001em;
+            color: #222222;
+          }
+          .btn2{
+            width:468px;
+            height: 48px;
+            background: #2D40D9;
+            border: 1px solid #EFF3FD;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+            color: #FFFFFF;
           }
         }
       }
