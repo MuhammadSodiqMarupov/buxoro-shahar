@@ -99,6 +99,7 @@ function App() {
   }
   useEffect(()=>{
       checkPage()
+      window.scroll(0,0);
   },[location.pathname])
   useEffect(()=>{
     checkPage();
