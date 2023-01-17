@@ -6,31 +6,31 @@ import clock from "../../../Images/clock.svg";
 import call from "../../../Images/phone-call.svg";
 import email from "../../../Images/email.svg";
 import odam from "../../../Images/odam.svg"
-import 
+import RahbarlarList from '../../../data/RahbarlarList';
 const Mayors = (props) => {
     return (
         <div className='mayors'>
-            <div className="container">
+            <div className="mayorContainer">
                 <DynamicSideBar  object={props.data} />
                 <div className="content">
-                    <div className="cardChiefCard">
+                    {RahbarlarList.map(item=><div className='cardChiefCard'>
                         <div className="left">
-                            <img src={odam} alt=""/>
+                            <img src={odam} alt="" />
                         </div>
                         <div className="right">
                             <div className="top">
-                                <p> Buxoro viloyati hokimi </p>
-                                <button> Batafsil </button>
+                                <p>{item.tuman}</p>
+                                <button>Batafsil</button>
                             </div>
-                            <h3> Ism Familiya Otasining ismi </h3>
-                            <small> Buxoro Shahar Alpomish ko‘chasi nechanchidir uy </small>
-                            <h1 className="other"><img src={clock} alt=""/> 08.00 dan 17.00 gacha </h1>
+                            <h3>{item.firstName}</h3>
+                            <small>{item.text}</small>
+                            <h1 className="other"><img src={clock} alt="" />{item.time}</h1>
                             <div className="bottom">
-                                <h2><img src={call} alt=""/> (99) 567 91 49 </h2>
-                                <h3><img src={email} alt=""/> zaripovbotir1969@buxdu.uz </h3>
+                                <h2><img src={call} alt="call" />{item.phone}</h2>
+                                <h3><img src={email} alt="email" />{item.email}</h3>
                             </div>
                         </div>
-                    </div>
+                    </div>)}
                 </div>
             </div>
         </div>
