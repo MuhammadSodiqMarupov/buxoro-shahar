@@ -93,7 +93,7 @@ function FotoVideoGalery(props) {
               onClose={() => setVideoModal(false)}
             />
             {phone ? (
-              slides.map((item, index) => (<div className="content-phone">
+              slides.map((item, index) => (<div key={index} className="content-phone">
                   <div className="top">
                     <LazyLoadImage src={minor} />
                     {switcher ? (
