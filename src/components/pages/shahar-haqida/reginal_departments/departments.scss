@@ -1,0 +1,39 @@
+.departments{
+  width: 100%;
+  padding-bottom: 30px;
+  .departments__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    .content{
+      display: flex;
+      flex-direction: column;
+      h1{
+        font-weight: 550;
+        font-size: 36px;
+        line-height: 44px;
+        color: #01012F;
+      }
+      .bottomBnts{
+        display: flex;
+       flex-wrap: wrap;
+        gap: 20px;
+          button {
+            width: 183px;
+            height: 48px;
+            background: #EFF1FC;
+            border-radius: 6px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.001em;
+            color: #2D40D9;
+          }
+      }
+    }
+  }
+}
