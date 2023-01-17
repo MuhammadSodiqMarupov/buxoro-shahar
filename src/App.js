@@ -18,6 +18,7 @@ import Surovnoma from "./components/pages/ijtimoiy_sorovnoma/Surovnoma";
 import Savollar from "./components/pages/savollar/Savollar";
 import Hotels from "./components/pages/hotels/Hotels";
 import Agency from "./components/pages/agency/Agency";
+import News from "./components/pages/News/News";
 const Header = React.lazy(()=>import('./components/Header/Header'))
 const Navbar = React.lazy(()=>import('./components/Navbar/Navbar'))
 const Section2 = React.lazy(()=>import('./components/Section2/Section2'))
@@ -33,6 +34,8 @@ function App() {
   const [titles,setTitltes] = useState([]);
   const [navbarData,setNavbarData] = useState([]);
   const [showes,setShowes] = useState([]);
+  const [allNews,setAllNews] = useState([]);
+  const [totalPage, setTotalPage] = useState(1);
 
     const location = useLocation();
 
@@ -88,7 +91,9 @@ function App() {
         let list = data.data.list;
         copy.push(list[i]);
       }
+      setTotalPage(data.data.maxPageNumber)
       setNews([...copy]);
+      setAllNews([...data.data.list]);
     })
   }
 
@@ -138,6 +143,7 @@ function App() {
       <Route path="/social-questionnaire" element={<Savollar data={getDataFilter("social-questionnaire")}/>}/>
       <Route path="/hotels" element={<Hotels data={getDataFilter("hotels")}/>}/>
       <Route path="/travel-agencies" element={<Agency data={getDataFilter("travel-agencies")}/>}/>
+      <Route path="/news" element={<News totalPage={totalPage} news={allNews} data={getDataFilter("news")}/>}/>
       </Route>
       </Routes>
   );
