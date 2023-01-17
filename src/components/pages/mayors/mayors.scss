@@ -11,18 +11,10 @@
         gap:20px;
     }
     .cardChiefCard{
-<<<<<<< HEAD
-=======
-        width: 50vw;
->>>>>>> 553949ae11ee0afec1d38590ed7619ca8a8fba05
         height: 300px;
         display: flex;
         padding-right: 20px;
         gap: 20px;
-<<<<<<< HEAD
-=======
-        margin-left: 30px; 
->>>>>>> 553949ae11ee0afec1d38590ed7619ca8a8fba05
         .right{
             display: flex;
             flex-direction: column;
@@ -33,7 +25,10 @@
                 line-height: 32px;
                 display: flex;
                 align-items: center;
-                color: #0C0C0C
+                color: #0C0C0C;
+                @media (max-width: ) {
+                    
+                }
             }
             small{
                 font-weight: 400;
