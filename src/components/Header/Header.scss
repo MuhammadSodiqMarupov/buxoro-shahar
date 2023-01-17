@@ -10,6 +10,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @media (max-width:1260px) {
+      justify-content: space-between;
+    }
     padding: 0 20px;
     @media (max-width: 1140px) {
       justify-content: space-between;
@@ -42,7 +45,6 @@
       display: flex;
       align-items: center;
       gap: 15px;
-
       .close_menu {
         position: absolute;
         right: 5%;
@@ -72,11 +74,10 @@
       .searchButton {
         padding: 0px 13px 0px 13px;
         border-right: 1px solid var(--blue);
-        @media (max-width: 1245px) {
+        @media (max-width:1260px) {
           padding: 0px 10px 0px 10px;
         }
       }
-
       .langButton {
         .dropdown-toggle {
 
@@ -147,4 +148,9 @@
 }
 .dropdown-item:hover .show .myDropdown {
   background-color: #000;
+}
+.dropdown {
+  @media (max-width:1260px) {
+    display: none;
+  }
 }

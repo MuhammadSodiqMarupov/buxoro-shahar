@@ -1,10 +1,10 @@
 import "./request.scss"
-import spripka from "../../../Images/spripka.svg"
+import file from '../../../Images/Frame.svg'
 function Request() {
     return (
         <div className="request">
             <div className="requestContainer">
-                <div className="bigBox  ">
+                <div className="myCard">
                     <h1> Buxoro hokimligiga murojaat yuborish </h1>
                     <p> Kengash uchun ariza, taklif, shikoyat va boshqa turdagi murojjatingiz bo'lsa bizga yozing. Murojaatingiz albatta hokimlik tomonidan ko'rib chiqiladi. Tashakkur! </p>
                     <div className="fio">
@@ -14,11 +14,11 @@ function Request() {
                     <div className="two_inp">
                        <div className="left">
                            <h3> Telefon* </h3>
-                           <input placeholder="+998 |" type="number"/>
+                           <input defaultValue={"+998"} placeholder="+998 |" type="text"/>
                        </div>
                         <div className="left">
                             <h3> E-mail* </h3>
-                            <input placeholder="Eshmat1991@gmail.com" type="text"/>
+                            <input defaultValue={"@gmail.com"} placeholder="Eshmat1991@gmail.com" type="text"/>
                         </div>
                     </div>
                     <div className="fio">
@@ -29,11 +29,18 @@ function Request() {
                         <h3> Murojaat matni* </h3>
                         <textarea placeholder="Bu yerda mavzuga oid kattagina matn bo‘ladi" name="" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <div className="lastBtn">
+                    <div className="lastBtns">
                         <h3>Mavzuga oid fayl</h3>
-                        <div className="btns">
-                            <button className="btn1"><img src={spripka} alt=""/> Faylni tanlang </button>
-                            <button className="btn2"> Murojjatni yuborish </button>
+                        <div className="btn__box">
+                                <input type="file" id="input__file" hidden/>
+                                <button onClick={()=>{
+                                    document.getElementById("input__file").click();
+                                }} className="file">
+                                <span>
+                                    <img src={file} alt="" className="file__svg"/>
+                                </span>
+                                 Faylni tanlang </button>
+                            <button className="send">Murojjatni yuborish</button>
                         </div>
                     </div>
                 </div>
