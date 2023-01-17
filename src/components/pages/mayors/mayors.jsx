@@ -13,7 +13,7 @@ const Mayors = (props) => {
             <div className="mayorContainer">
                 <DynamicSideBar  object={props.data} />
                 <div className="content">
-                    {RahbarlarList.map(item=><div className='cardChiefCard'>
+                    {RahbarlarList.map(item=><div key={item.id} className='cardChiefCard'>
                         <div className="left">
                             <img src={odam} alt="" />
                         </div>
