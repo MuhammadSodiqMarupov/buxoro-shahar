@@ -2,7 +2,9 @@ import "./Section2.scss"
 import galochka from "../../Images/galochka.svg"
 import boshliq from "../../Images/boshliq.jpg"
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import { useNavigate } from "react-router-dom";
 function Section2() {
+    const navigate = useNavigate();
     return (
         <div className="Section2">
             <div className="S2Container">
@@ -24,7 +26,7 @@ function Section2() {
                 </div>
                 <div className="right_part">
                     <img src={boshliq} className={"boshliq"} alt=""/>
-                    <button><i className="fa-regular fa-envelope"></i>  Elektron murojjat </button>
+                    <button onClick={()=>navigate('/request')}><i className="fa-regular fa-envelope"></i>  Elektron murojjat </button>
                 </div>
             </div>
         </div>
