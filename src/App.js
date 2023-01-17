@@ -12,6 +12,8 @@ import Rahbariyat from "./components/pages/rahbariyat/rahbariyat";
 import Mayors from "./components/pages/mayors/mayors";
 import Request from "./components/pages/request/Request";
 import {useLocation} from "react-router-dom";
+import Malumot from "./components/pages/shahar-haqida/malumot/Malumot";
+import Deparments from "./components/pages/shahar-haqida/reginal_departments/Deparments";
 const Header = React.lazy(()=>import('./components/Header/Header'))
 const Navbar = React.lazy(()=>import('./components/Navbar/Navbar'))
 const Section2 = React.lazy(()=>import('./components/Section2/Section2'))
@@ -124,7 +126,9 @@ function App() {
       <Route path="/address" element={<Address data={getDataFilter("address")}/>}/>
       <Route path="/the-leadership-of-the-regional-administration" element={<Rahbariyat data={getDataFilter("the-leadership-of-the-regional-administration")}/>}/>
       <Route path="/mayors-of-cities-and-districts" element={<Mayors data={getDataFilter("mayors-of-cities-and-districts")}/>}/>
-            <Route path={"/request"} element={<Request/>}/>
+      <Route path={"/request"} element={<Request/>}/>
+      <Route path="/information-about-the-province" element={<Malumot data={getDataFilter("information-about-the-province")}/>}/>
+      <Route path="/regionaldepartments" element={<Deparments data={getDataFilter("regionaldepartments")}/>}/>
       </Route>
       </Routes>
   );
