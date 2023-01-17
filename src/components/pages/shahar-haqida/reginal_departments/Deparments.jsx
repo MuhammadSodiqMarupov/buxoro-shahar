@@ -7,7 +7,6 @@ const Deparments = (props) => {
             <div className="departments__container">
                 <DynamicSideBar object={props.data}/>
                 <div className="content">
-                    
                 </div>
             </div>
         </div>

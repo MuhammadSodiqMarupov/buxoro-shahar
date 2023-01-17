@@ -111,4 +111,4 @@ const RahbarlarList = [
     }
 ]
 
-export default RahbarlarList;
+export default Rahbarlar`1List;

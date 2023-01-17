@@ -6,6 +6,7 @@ import clock from "../../../Images/clock.svg";
 import call from "../../../Images/phone-call.svg";
 import email from "../../../Images/email.svg";
 import odam from "../../../Images/odam.svg"
+import 
 const Mayors = (props) => {
     return (
         <div className='mayors'>
