@@ -81,7 +81,7 @@ const News = ({totalPage,data,news}) => {
                         pageRangeDisplayed={6}  
                         containerClassName='pagination'
                         pageClassName='page-item'
-                        pageLinkClassName='page_link'
+                        pageLinkClassName='page-link'
                         previousClassName='page-item'
                         previousLinkClassName='page-link'
                         nextClassName='page-item'

@@ -4,8 +4,6 @@ import instagram from "../../Images/instagram 1.svg"
 import facebook from "../../Images/facebook 1.svg"
 import youtube from "../../Images/youtube 1.svg"
 import warning from "../../Images/warning.svg"
-import getData from "../../lang/langTypeFilter"
-import { useEffect } from "react"
 const data = [
     {
         text:"Sayt test rejimda ishlamoqda",
@@ -24,9 +22,7 @@ const data = [
         btn:"Send a request"
     }
 ]
-function Header1() {
-    useEffect(()=>{
-        },[])
+function Header1({ getDataFilterByArr }) {
     return (
         <div className="Header1">
             <div className="h1Container">
@@ -44,9 +40,9 @@ function Header1() {
                         <img src={youtube} alt=""/>
                     </button>
                 </div>
-                <p><img src={warning} alt=""/>123 </p>
+                <p><img src={warning} alt=""/>{getDataFilterByArr(data).text}</p>
                 <div className="h1Last">
-                    <button>123</button>
+                    <button>{getDataFilterByArr(data).btn}</button>
                 </div>
             </div>
         </div>

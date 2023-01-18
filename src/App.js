@@ -41,6 +41,8 @@ function App() {
 
     const location = useLocation();
 
+    const getDataFilterByArr = dataArr => dataArr[parseInt(localStorage.getItem("langType")??"1")-1]
+
   function getDataFilter(stringTitle) {
     let FOUND_OBJECT = {};
     navbarData.map(item=>{
@@ -120,12 +122,11 @@ function App() {
       <Routes>
         <Route path={"/"} element={   <>
           <div className={"sticky__header"}>
-
-            <Header1/>
+            <Header1 getDataFilterByArr={getDataFilterByArr}/>
             <Header  titlesCopy={titles} refresh={getBackendData} navSideBar={navSideBar} navbarData={navbarData} titles={showes} set={setShowes}/>
           </div>
          { anotherPage?"":  <><Navbar/>
-        <Section2/>
+        <Section2 Filter={getDataFilterByArr}/>
         <Section3 data={news}/>
         <Section4/>
         <FOTO_VIDEO_GALERY/>
