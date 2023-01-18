@@ -3,10 +3,10 @@ import twitter from "../../Images/twitter 1.svg"
 import facebook from "../../Images/facebook 1.svg"
 import youtube from "../../Images/youtube 1.svg"
 import instagram from "../../Images/instagram 1.svg"
-import {YMaps , Map ,Placemark} from "react-yandex-maps";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-
+import { useNavigate } from "react-router-dom"
 function Footer() {
+    const navigate = useNavigate();
     return (
         <div className="Footer">
             <div className="footerContainer">
@@ -21,7 +21,7 @@ function Footer() {
                         <button><LazyLoadImage src={facebook} effect={"blur"} /> </button>
                         <button><LazyLoadImage src={youtube} effect={"blur"}/> </button>
                     </div>
-                    <button className="btn"> <i className="fa-regular fa-envelope"></i>  Elektron murojjat</button>
+                    <button onClick={()=>navigate("/request")} className="btn"> <i className="fa-regular fa-envelope"></i>  Elektron murojjat</button>
                 </div>
                 <div className="lastMiddle">
                     <div className="other">
@@ -33,10 +33,6 @@ function Footer() {
                            <p> bukhara_shahar@gmail.com </p>
                        </div>
 
-                </div>
-                <div className="right_map">
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12208.338012514056!2d64.65412035095811!3d40.09582884831204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f5069cd1745df59%3A0x237f48f2c7ce0cff!2sG%60ijduvon%20Tuman%20Ichki%20Ishlar%20Bo%60limi!5e0!3m2!1sru!2suk!4v1671468877396!5m2!1sru!2suk" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
