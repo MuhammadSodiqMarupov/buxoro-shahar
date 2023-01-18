@@ -19,6 +19,8 @@ import Savollar from "./components/pages/savollar/Savollar";
 import Hotels from "./components/pages/hotels/Hotels";
 import Agency from "./components/pages/agency/Agency";
 import News from "./components/pages/News/News";
+import Tenders from "./components/pages/tenders/Tenders";
+import Lectures from "./components/pages/lectures/Lectures";
 const Header = React.lazy(()=>import('./components/Header/Header'))
 const Navbar = React.lazy(()=>import('./components/Navbar/Navbar'))
 const Section2 = React.lazy(()=>import('./components/Section2/Section2'))
@@ -144,6 +146,8 @@ function App() {
       <Route path="/hotels" element={<Hotels data={getDataFilter("hotels")}/>}/>
       <Route path="/travel-agencies" element={<Agency data={getDataFilter("travel-agencies")}/>}/>
       <Route path="/news" element={<News totalPage={totalPage} news={allNews} data={getDataFilter("news")}/>}/>
+      <Route path="/announcements-and-tenders" element={<Tenders data={getDataFilter("announcements-and-tenders")}/>}/>
+      <Route path="/official-lectures" element={<Lectures data={getDataFilter("official-lectures")}/>}/> 
       </Route>
       </Routes>
   );
