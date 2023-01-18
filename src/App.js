@@ -72,7 +72,8 @@ function App() {
       
       let copy = [];
       let data = res.data.data;
-      for (let i = 1; i < data.length; i += 2) {
+      console.log(data);
+      for (let i = 0; i < data.length; i += 2) {
           copy.push({
               first: data[i],
               second: data[i + 1],
@@ -124,7 +125,7 @@ function App() {
         <Route path={"/"} element={   <>
           <div className={"sticky__header"}>
             <Header1 getDataFilterByArr={getDataFilterByArr}/>
-            <Header  titlesCopy={titles} refresh={getBackendData} navSideBar={navSideBar} navbarData={navbarData} titles={showes} set={setShowes}/>
+            <Header titlesCopy={titles} refresh={getBackendData} navSideBar={navSideBar} navbarData={navbarData} titles={showes} set={setShowes}/>
           </div>
          { anotherPage?"":  <><Navbar/>
         <Section2 Filter={getDataFilterByArr}/>
