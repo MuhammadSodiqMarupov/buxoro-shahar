@@ -86,6 +86,10 @@ function Header(props) {
                             {item?.items?.length ? <DropdownMenu>
                                 {item.items.map((item1, index) =>
                                     <DropdownItem key={index} onClick={()=>{
+                                        if(item1.page.startsWith("http")) {
+                                            window.location.href = item1.page
+                                            return
+                                        };
                                         navigate(item1.page);
                                     }}>
                                         {item1.page.startsWith("http")?<a className="tdn " href={item1.page}>
@@ -100,8 +104,8 @@ function Header(props) {
                         <button className={"searchButton"}>
                             <img width={20} height={24} src={search} alt="Searchjon"/>
                         </button>
-                        <Dropdown className={"langButton"} show={langShow} onMouseLeave={() => setLangShow(false)}
-                                  onMouseOver={() => setLangShow(true)}>
+                        <Dropdown className={"langButton"} show={langShow} onMouseLeave={() =>setLangShow(false)}
+                                  onMouseOverCapture={() => setLangShow(true)}>
                             <DropdownToggle className={"myDropdown"}>
                                 {selectTxt}
                             </DropdownToggle>

@@ -3,35 +3,40 @@ import DynamicSideBar from '../../SideBar/DynamicSideBar';
 import headerAPI, { domen } from '../../../headerAPI';
 import './news.scss'
 import ReactPaginate from 'react-paginate';
-const News = ({totalPage,data,news}) => {
+const News = ({getDataFilterByArr,totalPage,data,news}) => {
     const [doublesNews, setdoublesNews] = useState([]);
-
-    const [myNews,setMyNews] = useState([]);
+    const [HolographText,setHolographText] = useState(["Yangiliklar","Йангиликлар","Новости","News"]);
+    const [myNews,setMyNews] = useState({});
 
 
     const handleChangePage = (data)=> {
         setdoublesNews([]);
+        setMyNews([]);
         let currentNumber = data.selected+1;
         headerAPI("api/post/1?pageNumber="+currentNumber,localStorage.getItem('langType')??"1").then(({data})=>{
-            setMyNews([...data.data.list]);
+            setMyNews({...data.data.list[0]});
             getDoubledData([...data.data.list]);
         })
     }
 
+    
     function getDoubledData(data) {
-        for(let i = 2;i < data.length;i+=2){
-            doublesNews.push({
-                first:data[i-1],
-                second:data[i]
+        let copy = [];
+        for(let i = 1;i < data.length;i+=2){
+            copy.push({
+                first:data[i],
+                second:data[i+1]
             });
         }
-        setdoublesNews([...doublesNews]);
+        setdoublesNews([...copy]);
     }
     
     useEffect(()=>{
         if(news.length) {
+            setMyNews({})
+            setdoublesNews([]);
             getDoubledData(news);
-            setMyNews([...news]);
+            setMyNews({...news[0]});
         }
     },[news])
     return (
@@ -39,16 +44,16 @@ const News = ({totalPage,data,news}) => {
             <div className="news__container">
                 <DynamicSideBar object={data}/>
                 <div className="content">
-                    <h1>Yangiliklar</h1>
+                    <h1>{getDataFilterByArr(HolographText)}</h1>
                     <div className="content_news">
                         <div className='main_item'>
                             <div className="top">
                                 <div className="top">
-                                    <img className='main_item_image' src={myNews.length!=0?domen+myNews[0].imageUrl:''} alt="" />
+                                    <img className='main_item_image' src={domen+myNews.imageUrl} alt="" />
                                 </div>
                                 <div className="text">
-                                    <div className="item_date">{myNews.length!=0?myNews[0].date:""}</div>
-                                    <div className="item_descr">{myNews.length!=0?myNews[0].title:""}</div>
+                                    <div className="item_date">{myNews.date}</div>
+                                    <div className="item_descr">{myNews.title}</div>
                                 </div>
                             </div>
                         </div>
@@ -62,33 +67,33 @@ const News = ({totalPage,data,news}) => {
                                     <div className="item_descr">{item.first.title}</div>
                                 </div>
                             </div>
-                           <div className="second">
+                            {item.second?         <div className="second">
                                 <div className="top">
-                                    <img src={domen+item.second.imageUrl} className='item_image' alt="" />
+                                    <img src={domen+item.second?.imageUrl} className='item_image' alt="" />
                                 </div>
                                 <div className="text">
-                                    <div className="item_date">{item.second.date}</div>
-                                    <div className="item_descr">{item.second.title}</div>
+                                    <div className="item_date">{item.second?.date}</div>
+                                    <div className="item_descr">{item.second?.title}</div>
                                 </div>
-                            </div>
+                            </div>:""}
                         </div>)}
-                        <ReactPaginate 
+                    </div>
+                    <ReactPaginate 
                         previousLabel={'<-'}
                         nextLabel={"->"}
                         pageCount={totalPage}
                         marginPagesDisplayed={3}
                         onPageChange={handleChangePage}
                         pageRangeDisplayed={6}  
-                        containerClassName='pagination'
-                        pageClassName='page-item'
-                        pageLinkClassName='page-link'
+                        containerClassName='pagination my_pagination'
+                        pageClassName='page_item'
+                        pageLinkClassName='page_link'
                         previousClassName='page-item'
                         previousLinkClassName='page-link'
                         nextClassName='page-item'
                         nextLinkClassName='page-link'
                         breakLinkClassName='page-link'
                         />
-                    </div>
                 </div>
             </div>
         </div>

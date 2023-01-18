@@ -72,7 +72,7 @@ function App() {
       
       let copy = [];
       let data = res.data.data;
-      for (let i = 0; i < data.length; i += 2) {
+      for (let i = 1; i < data.length; i += 2) {
           copy.push({
               first: data[i],
               second: data[i + 1],
@@ -98,6 +98,7 @@ function App() {
       setTotalPage(data.data.maxPageNumber)
       setNews([...copy]);
       setAllNews([...data.data.list]);
+      console.log(data.data);
     })
   }
 
@@ -127,7 +128,7 @@ function App() {
           </div>
          { anotherPage?"":  <><Navbar/>
         <Section2 Filter={getDataFilterByArr}/>
-        <Section3 data={news}/>
+        <Section3 getDataFilterByArr={getDataFilterByArr} data={news}/>
         <Section4/>
         <FOTO_VIDEO_GALERY/>
         <Section5/>
@@ -146,7 +147,7 @@ function App() {
       <Route path="/social-questionnaire" element={<Savollar data={getDataFilter("social-questionnaire")}/>}/>
       <Route path="/hotels" element={<Hotels data={getDataFilter("hotels")}/>}/>
       <Route path="/travel-agencies" element={<Agency data={getDataFilter("travel-agencies")}/>}/>
-      <Route path="/news" element={<News totalPage={totalPage} news={allNews} data={getDataFilter("news")}/>}/>
+      <Route path="/news" element={<News getDataFilterByArr={getDataFilterByArr} totalPage={totalPage} news={allNews} data={getDataFilter("news")}/>}/>
       <Route path="/announcements-and-tenders" element={<Tenders data={getDataFilter("announcements-and-tenders")}/>}/>
       <Route path="/official-lectures" element={<Lectures data={getDataFilter("official-lectures")}/>}/> 
       </Route>
