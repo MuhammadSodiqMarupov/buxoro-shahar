@@ -98,7 +98,6 @@ function App() {
       setTotalPage(data.data.maxPageNumber)
       setNews([...copy]);
       setAllNews([...data.data.list]);
-      console.log(data.data);
     })
   }
 
@@ -119,6 +118,7 @@ function App() {
     checkPage();
     getBackendData();
   },[]);
+  console.log(titles);
   return (
       <Routes>
         <Route path={"/"} element={   <>
