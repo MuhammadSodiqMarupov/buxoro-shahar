@@ -6,7 +6,6 @@ const FreeJobs = (props) => {
         <div className='free_jobs'>
             <DynamicSideBar object={props.data}/>
             <div className="free_jobs_container">
-                
             </div>
         </div>
     );

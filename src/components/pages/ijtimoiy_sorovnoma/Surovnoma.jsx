@@ -7,7 +7,6 @@ const Surovnoma = (props) => {
             <div className="surovnoma__container">
                 <DynamicSideBar object={props.data}/>
                 <div className="content">
-
                 </div>
             </div>
         </div>

@@ -4,7 +4,8 @@ import instagram from "../../Images/instagram 1.svg"
 import facebook from "../../Images/facebook 1.svg"
 import youtube from "../../Images/youtube 1.svg"
 import warning from "../../Images/warning.svg"
-import getData  from "../../lang/langTypeFilter"
+import getData from "../../lang/langTypeFilter"
+import { useEffect } from "react"
 const data = [
     {
         text:"Sayt test rejimda ishlamoqda",
@@ -24,6 +25,8 @@ const data = [
     }
 ]
 function Header1() {
+    useEffect(()=>{
+        },[])
     return (
         <div className="Header1">
             <div className="h1Container">
