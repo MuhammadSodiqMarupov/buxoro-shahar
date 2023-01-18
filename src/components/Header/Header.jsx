@@ -28,6 +28,8 @@ function Header(props) {
         }
     }
 
+    console.log(props.navSideBar);
+
     function changeLang(s,fullTxt) {
         setSelectTxt(fullTxt);
         localStorage.setItem("langType", s);
@@ -44,19 +46,18 @@ function Header(props) {
             <div className="hamburger">
             {hamburger && props.navSideBar?.map((item, index) => <div className={"part"} key={index}>
                         <h1 className={"blue"}>{item.first.title}</h1>
-                        {item.first.items.map((item1, index1) => <Link onClick={()=>{
-                            menuOpen("0vh");
-                        }} key={index1}
-                            to={props.titlesCopy[index]?.first.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
+                        {item.first.items.map((item1, index1) => <Link onClick={()=>menuOpen("0vh")} key={index1}
+                            to={props.titlesCopy[index]?.first?.items[index1]?.page.toLowerCase().replaceAll(" ", "_")}>
                             <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
                         </Link>)}
-                        <h1 className={"blue"}>{item.second.title}</h1>
-                        {item.second.items.map((item1, index1) => item1.title ?
-                            <Link onClick={()=>{
-                                menuOpen("0vh");
-                            }} key={index1} to={props.titlesCopy[index]?.second?.items[index1]?.page.toLowerCase().replaceAll(" ", "_")}>
-                                <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
-                            </Link> : "")}
+
+
+
+                        <h1 className={"blue"}>{item.second?.title}</h1>
+                        {item.second?.items.map((item1, index1) => <Link onClick={()=>menuOpen("0vh")} key={index1}
+                            to={props.titlesCopy[index]?.second?.items[index1]?.page.toLowerCase().replaceAll(" ", "_")}>
+                            <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                        </Link>)}
                     </div>)}
             </div>
             <div className="Header">
