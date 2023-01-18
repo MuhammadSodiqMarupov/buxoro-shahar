@@ -8,6 +8,7 @@ import {useState} from "react";
 import search from '../../Images/search.jpg';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import home from '../../Images/home.svg'
 function Header(props) {
     const [langShow, setLangShow] = useState(false);
     const [hamburger, setHamburger] = useState(false);
@@ -64,6 +65,7 @@ function Header(props) {
                         <div>
                             <img src={logo} onClick={() => hamburger ? menuOpen('0vh') : menuOpen('100vh')} width={32}
                                  height={32} alt="Logojon"/>
+                                 <img onClick={()=>navigate('/')} src={home} alt="Homejon" className="home__logo"/>
                             {hamburger ?
                                 <p className={"close_menu"} onClick={() => menuOpen('0')}>CLOSE</p>
                                 : ""}
@@ -85,7 +87,11 @@ function Header(props) {
                                 {item.items.map((item1, index) =>
                                     <DropdownItem key={index} onClick={()=>{
                                         navigate(item1.page);
-                                    }}>{item1.title}</DropdownItem>
+                                    }}>
+                                        {item1.page.startsWith("http")?<a className="tdn " href={item1.page}>
+                                            {item1.title}
+                                        </a>:item1.title}
+                                    </DropdownItem>
                                 )}
                             </DropdownMenu> : ""}
                         </Dropdown>) : ''}

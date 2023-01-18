@@ -20,7 +20,7 @@ const DynamicSideBar = ({ object}) => {
           <h1>{object.hasOwnProperty('title')?object.title:"Loading...."}</h1>
         </div>
         <div className="content">
-            {object?.items?.map((item,index)=><Link key={index} className={FOUND===item.page?"current_page":""} to={"/"+item.page}>{item.title}</Link>)}
+            {object?.items?.map((item,index)=>item.page.startsWith('http')?<a href={item.page} key={index} className={FOUND===item.page?"current_page":""}>{item.title}</a>:<Link key={index} className={FOUND===item.page?"current_page":""} to={"/"+item.page}>{item.title}</Link>)}
         </div>
       </div>
     </>

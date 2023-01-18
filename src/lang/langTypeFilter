@@ -1,0 +1,4 @@
+function getData(dataArr) {
+    console.log(dataArr);
+}
+export default getData;
