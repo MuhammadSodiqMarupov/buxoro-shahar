@@ -1,5 +1,4 @@
 import './hotels.scss'
-import 
 import React from 'react';
 import DynamicSideBar from '../../SideBar/DynamicSideBar';
 
