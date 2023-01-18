@@ -1,5 +1,5 @@
 import './hotels.scss'
-
+import 
 import React from 'react';
 import DynamicSideBar from '../../SideBar/DynamicSideBar';
 
@@ -37,7 +37,7 @@ const Hotels = (props) => {
                     <div className="content">
                     <h1> Mehmonxonalar </h1>
                     <div className="hotelCard">
-
+                        <img src={}" alt="" />
                     </div> 
                 </div>
             </div>
