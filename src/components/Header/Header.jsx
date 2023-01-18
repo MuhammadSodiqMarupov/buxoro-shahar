@@ -54,7 +54,7 @@ function Header(props) {
                         {item.second.items.map((item1, index1) => item1.title ?
                             <Link onClick={()=>{
                                 menuOpen("0vh");
-                            }} key={index1} to={props.titlesCopy[index]?.second.items[index1].page.toLowerCase().replaceAll(" ", "_")}>
+                            }} key={index1} to={props.titlesCopy[index]?.second?.items[index1]?.page.toLowerCase().replaceAll(" ", "_")}>
                                 <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
                             </Link> : "")}
                     </div>)}
