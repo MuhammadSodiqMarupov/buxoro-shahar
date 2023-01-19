@@ -1,6 +1,6 @@
 import "./App.scss";
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Outlet } from "react-router-dom";
 import headerAPI from "./headerAPI";
@@ -22,6 +22,7 @@ import Tenders from "./components/pages/tenders/Tenders";
 import Lectures from "./components/pages/lectures/Lectures";
 import CurrentNew from "./components/pages/currentNew/CurrentNew";
 import NotFoundPage from "./Error/NotFoundPage";
+import FormalAttitude from "./components/pages/formal_attitude/FormalAttitude";
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -48,6 +49,7 @@ function App() {
   const [currentItem,setCurrentItem] = useState({});
   const [elonlar,setElonlar] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
 
@@ -151,6 +153,7 @@ function App() {
 
   useEffect(() => {
     checkPage();
+    getBackendData();
     window.scroll(0, 0);
   }, [location.pathname]);
   useEffect(() => {
@@ -276,6 +279,7 @@ function App() {
         />
         <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
         <Route path="/404" element={<NotFoundPage />}/>
+        <Route path="/formal-attitude" element={<FormalAttitude data={getDataFilter("formal-attitude")}/>}/>
       </Route>
     </Routes>
   );

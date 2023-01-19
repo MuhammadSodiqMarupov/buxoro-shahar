@@ -2,6 +2,7 @@ import DynamicSideBar from '../../SideBar/DynamicSideBar';
 import './tenders.scss';
 import duduuuk from "../../../Images/dukduk.svg"
 const Tenders = ({arr,data}) => {
+    console.log(arr);
     return (
         <div className="tenders">
             <div className="tenders__container">
