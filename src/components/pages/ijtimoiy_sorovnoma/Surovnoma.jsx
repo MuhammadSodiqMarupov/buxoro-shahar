@@ -1,11 +1,11 @@
-import React from 'react';
 import DynamicSideBar from '../../SideBar/DynamicSideBar';
+import './Surovnaa.scss'
+const Surovnoma = ({data}) => {
 
-const Surovnoma = (props) => {
     return (
         <div className='surovnoma'>
             <div className="surovnoma__container">
-                <DynamicSideBar object={props.data}/>
+                <DynamicSideBar object={data}/>
                 <div className="content">
                 </div>
             </div>

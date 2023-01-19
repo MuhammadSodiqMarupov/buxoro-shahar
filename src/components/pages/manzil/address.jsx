@@ -9,7 +9,7 @@ const Address = (props) => {
                 <DynamicSideBar object={props.data}/>
                 <div className="address-content">
                     <h1> Manzil </h1>
-                    <img src={map} alt=""/>
+                    <img src={map} alt="Loading Image....."/>
                     <h2 className="manzilH2"> Manzil: 100066, Chilonzor tumani, Islom Karimov ko‘chasi 51 </h2>
                     <div className="informations">
                     <div className="firstInfo">

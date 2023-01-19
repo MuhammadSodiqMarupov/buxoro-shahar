@@ -28,19 +28,19 @@ function Header1({ getDataFilterByArr }) {
             <div className="h1Container">
                 <div className="h1Left">
                     <button>
-                        <img src={twitter} alt=""/>
+                        <img src={twitter} alt="Loading Image....."/>
                     </button>
                     <button>
-                        <img src={instagram} alt=""/>
+                        <img src={instagram} alt="Loading Image....."/>
                     </button>
                     <button>
-                        <img src={facebook} alt=""/>
+                        <img src={facebook} alt="Loading Image....."/>
                     </button>
                     <button>
-                        <img src={youtube} alt=""/>
+                        <img src={youtube} alt="Loading Image....."/>
                     </button>
                 </div>
-                <p><img src={warning} alt=""/>{getDataFilterByArr(data).text}</p>
+                <p><img src={warning} alt="Loading Image....."/>{getDataFilterByArr(data).text}</p>
                 <div className="h1Last">
                     <button>{getDataFilterByArr(data).btn}</button>
                 </div>

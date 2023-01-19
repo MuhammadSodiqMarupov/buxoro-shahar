@@ -40,9 +40,9 @@ const Hotels = (props) => {
                     <div className="content">
                     <h1> Mehmonxonalar </h1>
                         {hotelarr.map((item,index)=><div className="hotelCard">
-                            <img src={item.img} alt=""/>
+                            <img src={item.img} alt="Loading Image....."/>
                             <div className="right">
-                                <h3>  <img className="starYellow" src={yellowstar} alt=""/> {item.price} </h3>
+                                <h3>  <img className="starYellow" src={yellowstar} alt="Loading Image....."/> {item.price} </h3>
                                 <h1> {item.name} </h1>
                                 <small> {item.txt} </small>
                                 <div className="bottom">

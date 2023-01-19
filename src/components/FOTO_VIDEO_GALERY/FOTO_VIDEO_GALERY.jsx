@@ -103,7 +103,7 @@ function FotoVideoGalery(props) {
                         onClick={() => setVideoModal(true)}
                         src={player}
                         className={"player"}
-                        alt=""
+                        alt="Loading Image....."
                       />
                     )}
                   </div>
@@ -134,7 +134,7 @@ function FotoVideoGalery(props) {
                           onClick={() => setVideoModal(true)}
                           src={player}
                           className={"player"}
-                          alt=""
+                          alt="Loading Image....."
                         />
                       )}
                     </div>
