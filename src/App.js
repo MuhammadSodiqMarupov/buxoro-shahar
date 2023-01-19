@@ -22,6 +22,7 @@ import Tenders from "./components/pages/tenders/Tenders";
 import Lectures from "./components/pages/lectures/Lectures";
 import CurrentNew from "./components/pages/currentNew/CurrentNew";
 import NotFoundPage from "./Error/NotFoundPage";
+import FormalAttitude from "./components/pages/formal_attitude/FormalAttitude";
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -46,6 +47,7 @@ function App() {
   const [surovnomalar,setSurovnomalar] = useState([]);
   const [hokimlar,setHokimlar] = useState([]);
   const [currentItem,setCurrentItem] = useState({});
+  const [elonlar,setElonlar] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -71,6 +73,7 @@ function App() {
     setNews([]);
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType ?? "1";
+    console.log(pageNavigation)
     headerAPI("api/home/menus", langType).then((res) => {
       setNavbarData([...res.data.data]);
       res.data.data.map((item) => {
@@ -129,6 +132,13 @@ function App() {
         setSurovnomalar([...realData]);
       })
     }
+    if(pageNavigation==="announcements-and-tenders") {
+      headerAPI("api/post/2",langType).then(({data})=>{
+        let realData = data.data.list;
+        setElonlar([...realData]);
+        console.log(realData)
+      })
+    }
   }
 
   function checkPage() {
@@ -143,6 +153,7 @@ function App() {
 
   useEffect(() => {
     checkPage();
+    getBackendData();
     window.scroll(0, 0);
   }, [location.pathname]);
   useEffect(() => {
@@ -259,7 +270,7 @@ function App() {
         <Route
           path="/announcements-and-tenders"
           element={
-            <Tenders data={getDataFilter("announcements-and-tenders")} />
+            <Tenders arr={elonlar} data={getDataFilter("announcements-and-tenders")} />
           }
         />
         <Route
@@ -268,6 +279,7 @@ function App() {
         />
         <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
         <Route path="/404" element={<NotFoundPage />}/>
+        <Route path="/formal-attitude" element={<FormalAttitude data={getDataFilter("formal-attitude")}/>}/>
       </Route>
     </Routes>
   );

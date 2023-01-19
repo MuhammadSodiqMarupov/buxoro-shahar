@@ -1,0 +1,55 @@
+.lectures {
+  width: 100%;
+  padding-bottom: 30px;
+  .lecturesContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    .content{
+    display: flex;
+      gap: 20px;
+      flex-direction: column;
+      h1{
+        font-weight: 550;
+        font-size: 36px;
+        line-height: 44px;
+        color: #01012F;
+      }
+      .bigCard{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    .otherCard{
+      max-width: 386px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      .data{
+        width: 72px;
+        height: 30px;
+        background: #EFF1FC;
+        border-radius: 4px;
+        font-weight: 550;
+        font-size: 11px;
+        line-height: 11px;
+        color: #2D40D9;
+      }
+      h3{
+        font-weight: 550;
+        font-size: 22px;
+        line-height: 28px;
+        color: #111111;
+      }
+    }
+  }
+}
