@@ -80,7 +80,7 @@ function Section2({ Filter }) {
                     </div>
                 </div>
                 <div className="right_part">
-                    <img src={boshliq} className={"boshliq"} alt=""/>
+                    <img src={boshliq} className={"boshliq"} alt="Loading Image....."/>
                     <button onClick={()=>navigate('/request')}><i className="fa-regular fa-envelope"></i> {Filter(langData).btn}</button>
                 </div>
             </div>

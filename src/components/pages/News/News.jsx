@@ -48,19 +48,17 @@ const News = ({getDataFilterByArr,totalPage,data,news}) => {
                     <div className="content_news">
                         <div className='main_item'>
                             <div className="top">
-                                <div className="top">
-                                    <img className='main_item_image' src={domen+myNews.imageUrl} alt="" />
-                                </div>
-                                <div className="text">
+                                    <img className='main_item_image' src={domen+myNews.imageUrl} alt="Loading Image....." />
+                            </div>
+                            <div className="text">
                                     <div className="item_date">{myNews.date}</div>
                                     <div className="item_descr">{myNews.title}</div>
                                 </div>
-                            </div>
                         </div>
                         {doublesNews.map((item,index)=><div key={index} className='item_part'>
                             <div className="first">
                                 <div className="top">
-                                    <img src={domen+item.first.imageUrl} className='item_image' alt="" />
+                                    <img src={domen+item.first.imageUrl} className='item_image' alt="Loading Image....." />
                                 </div>
                                 <div className="text">
                                     <div className="item_date">{item.first.date}</div>
@@ -69,7 +67,7 @@ const News = ({getDataFilterByArr,totalPage,data,news}) => {
                             </div>
                             {item.second?         <div className="second">
                                 <div className="top">
-                                    <img src={domen+item.second?.imageUrl} className='item_image' alt="" />
+                                    <img src={domen+item.second?.imageUrl} className='item_image' alt="Loading Image....." />
                                 </div>
                                 <div className="text">
                                     <div className="item_date">{item.second?.date}</div>
