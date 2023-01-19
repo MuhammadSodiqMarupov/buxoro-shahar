@@ -1,6 +1,6 @@
 import "./App.scss";
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Outlet } from "react-router-dom";
 import headerAPI from "./headerAPI";
@@ -47,6 +47,7 @@ function App() {
   const [hokimlar,setHokimlar] = useState([]);
   const [currentItem,setCurrentItem] = useState({});
   const location = useLocation();
+  const navigate = useNavigate();
 
   const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
 
