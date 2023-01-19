@@ -5,7 +5,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Outlet } from "react-router-dom";
 import headerAPI from "./headerAPI";
 import Header1 from "./components/Header1/Header1";
-import DynamicSideBar from "./components/SideBar/DynamicSideBar";
 import Xizmatlar from "./components/pages/xizmatlar/xizmatlar";
 import Address from "./components/pages/manzil/address";
 import Rahbariyat from "./components/pages/rahbariyat/rahbariyat";
@@ -21,6 +20,8 @@ import Agency from "./components/pages/agency/Agency";
 import News from "./components/pages/News/News";
 import Tenders from "./components/pages/tenders/Tenders";
 import Lectures from "./components/pages/lectures/Lectures";
+import CurrentNew from "./components/pages/currentNew/CurrentNew";
+import NotFoundPage from "./Error/NotFoundPage";
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -44,6 +45,7 @@ function App() {
   const [rahbarlar, setRahbarlar] = useState([]);
   const [surovnomalar,setSurovnomalar] = useState([]);
   const [hokimlar,setHokimlar] = useState([]);
+  const [currentItem,setCurrentItem] = useState({});
   const location = useLocation();
 
   const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
@@ -78,7 +80,6 @@ function App() {
 
       let copy = [];
       let data = res.data.data;
-      console.log(data);
       for (let i = 0; i < data.length; i += 2) {
         copy.push({
           first: data[i],
@@ -111,20 +112,17 @@ function App() {
         setServices(data.data);
       });
       return
-    }
-    if(pageNavigation==="mayors-of-cities-and-districts") {
+    }else if(pageNavigation==="mayors-of-cities-and-districts") {
       headerAPI("api/employee/2", langType).then(({ data }) => {
         setRahbarlar(data.data);
       });
       return
-    }
-    if(pageNavigation==="the-leadership-of-the-regional-administration") {
+    }else if(pageNavigation==="the-leadership-of-the-regional-administration") {
       headerAPI("api/employee/1",langType).then(({data})=>{
         setHokimlar(data.data)
       }) 
       return
-    }
-    if(pageNavigation==="social-questionnaire") {
+    }else if(pageNavigation==="social-questionnaire") {
       headerAPI("api/survey/getAll",langType).then(({data})=>{
         let realData = data.data;
         setSurovnomalar([...realData]);
@@ -209,7 +207,7 @@ function App() {
         />
         <Route
           path="/mayors-of-cities-and-districts"
-          element={
+          element={ 
             <Mayors arr={hokimlar} data={getDataFilter("mayors-of-cities-and-districts")} />
           }
         />
@@ -248,6 +246,8 @@ function App() {
           path="/news"
           element={
             <News
+              set={setCurrentItem}
+              currentItem={currentItem}
               getDataFilterByArr={getDataFilterByArr}
               totalPage={totalPage}
               news={allNews}
@@ -265,6 +265,8 @@ function App() {
           path="/official-lectures"
           element={<Lectures data={getDataFilter("official-lectures")} />}
         />
+        <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
+        <Route path="/404" element={<NotFoundPage />}/>
       </Route>
     </Routes>
   );
