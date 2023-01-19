@@ -46,6 +46,7 @@ function App() {
   const [surovnomalar,setSurovnomalar] = useState([]);
   const [hokimlar,setHokimlar] = useState([]);
   const [currentItem,setCurrentItem] = useState({});
+  const [elonlar,setElonlar] = useState([]);
   const location = useLocation();
 
   const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
@@ -70,6 +71,7 @@ function App() {
     setNews([]);
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType ?? "1";
+    console.log(pageNavigation)
     headerAPI("api/home/menus", langType).then((res) => {
       setNavbarData([...res.data.data]);
       res.data.data.map((item) => {
@@ -126,6 +128,13 @@ function App() {
       headerAPI("api/survey/getAll",langType).then(({data})=>{
         let realData = data.data;
         setSurovnomalar([...realData]);
+      })
+    }
+    if(pageNavigation==="announcements-and-tenders") {
+      headerAPI("api/post/2",langType).then(({data})=>{
+        let realData = data.data.list;
+        setElonlar([...realData]);
+        console.log(realData)
       })
     }
   }
@@ -258,7 +267,7 @@ function App() {
         <Route
           path="/announcements-and-tenders"
           element={
-            <Tenders data={getDataFilter("announcements-and-tenders")} />
+            <Tenders arr={elonlar} data={getDataFilter("announcements-and-tenders")} />
           }
         />
         <Route
