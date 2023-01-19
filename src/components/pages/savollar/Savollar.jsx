@@ -7,7 +7,9 @@ const Savollar = (props) => {
             <div className="savollar__container">
                 <DynamicSideBar object={props.data}/>
                 <div className="content">
-                    
+                    <h1>
+                    Ijtimoiy so‘rovnoma
+                    </h1>
                 </div>
             </div>
         </div>
