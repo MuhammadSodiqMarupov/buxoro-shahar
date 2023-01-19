@@ -13,9 +13,9 @@ const Mayors = (props) => {
             <div className="mayorContainer">
                 <DynamicSideBar  object={props.data} />
                 <div className="content">
-                    {RahbarlarList.map(item=><div key={item.id} className='cardChiefCard'>
+                    {props.arr.map(item=><div key={item.id} className='cardChiefCard'>
                         <div className="left">
-                            <img src={odam} alt="" />
+                            <img src={odam} alt="Loading Image....." />
                         </div>
                         <div className="right">
                             <div className="top">
@@ -24,7 +24,7 @@ const Mayors = (props) => {
                             </div>
                             <h3 className="Name">{item.firstName}</h3>
                             <small>{item.text}</small>
-                            <h1 className="other"><img src={clock} alt="" />{item.time}</h1>
+                            <h1 className="other"><img src={clock} alt="Loading Image....." />{item.time}</h1>
                             <div className="bottom">
                                 <h2><img src={call} alt="call" />{item.phone}</h2>
                                 <h3><img src={email} alt="email" />{item.email}</h3>

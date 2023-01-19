@@ -37,7 +37,7 @@ function Request() {
                                     document.getElementById("input__file").click();
                                 }} className="file">
                                 <span>
-                                    <img src={file} alt="" className="file__svg"/>
+                                    <img src={file} alt="Loading Image....." className="file__svg"/>
                                 </span>
                                  Faylni tanlang </button>
                             <button className="send">Murojjatni yuborish</button>

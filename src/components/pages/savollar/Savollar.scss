@@ -1,0 +1,82 @@
+.savollar {
+    .savollar__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width:500px) {
+            justify-content: center;
+        }
+        .savollar_content {
+            margin-top: 100px;
+            margin-left: 20px;
+            .surovnoma_content {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                .item_savol {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .title {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    .brief_description {
+                        font-size: 22px;
+                        font-weight: 550;
+                    }
+                    .descr_full {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #191D20;
+                    }
+                    .like_content {
+                        display: flex;
+                        gap: 20px;
+                        width: 300px;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        height: 50px;
+                        padding-bottom: 20px;
+                        display: flex;
+                        align-items: center;
+                        button {
+                            border: 3px solid #f1f2f1;
+                            background-color: #f2f2f2;
+                            font-size: 40px;
+                        }
+                        .can_submit {
+                            width: 200px;
+                            height: 50px;
+                            border: none;
+                            background-color: #2D40D9;
+                            color: white;
+                            font-size: 22px;
+                            border-radius: 8px;
+                        }
+                        .submited {
+                            width: 200px;
+                            height: 50px;
+                            border: none;
+                            background-color: #2D40D9;
+                            color: white;
+                            font-size: 22px;
+                            border-radius: 8px;
+                            opacity: 50%;
+                            cursor: default;
+                        }
+                        .like {
+                            padding: 5px;
+                            border-radius: 10px;
+                        }
+                        .dislike {
+                            padding: 5px;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
