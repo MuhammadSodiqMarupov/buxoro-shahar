@@ -3,9 +3,56 @@
         max-width: 1200px;
         display: flex;
         justify-content: space-around;
-        
-        .content {
+        margin: 0 auto;
+        gap: 20px;
+        padding: 0 20px;
 
+        @media (max-width: 920px) {
+            flex-wrap: wrap;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            h1{
+                font-weight: 550;
+                font-size: 36px;
+                line-height: 44px;
+                color: #191D20;
+                @media (max-width: 500px) {
+                    font-size: 30px;
+                }
+            }
+            .questions{
+                max-width: 793px;
+                background: rgba(247, 249, 254, 0.7);
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 30px;
+                img{
+                    width: 41px;
+                    height: 44px;
+                }
+                .bottom{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    h3{
+                        font-weight: 550;
+                        font-size: 22px;
+                        line-height: 28px;
+                        color: #191D20;
+                    }
+                    small{
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 140%;
+                        color: #191D20;
+                        opacity: 0.7;
+                    }
+                }
+            }
         }
     }
 }
