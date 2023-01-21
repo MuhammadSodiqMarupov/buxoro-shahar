@@ -69,19 +69,18 @@ function App() {
   function getBackendData() {
     let docURL = document.URL;
     let pageNavigation = docURL.substring(docURL.lastIndexOf("/") + 1);
-    setShowes([]);
     setNews([]);
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType ?? "1";
     console.log(pageNavigation)
     headerAPI("api/home/menus", langType).then((res) => {
+      let copyShowes = [];
       setNavbarData([...res.data.data]);
       res.data.data.map((item) => {
-        showes.push(false);
+        copyShowes.push(false);
       });
-      setShowes([...showes]);
+      setShowes([...copyShowes]);
       setNavbarData([...res.data.data]);
-
       let copy = [];
       let data = res.data.data;
       for (let i = 0; i < data.length; i += 2) {
@@ -98,6 +97,7 @@ function App() {
           second: data[i === data.length ? i : i + 1],
         });
       }
+      console.log([...titles]);
       setTitltes([...copy2]);
     });
 
@@ -108,7 +108,7 @@ function App() {
         copy.push(list[i]);
       }
       setTotalPage(data.data.maxPageNumber);
-      setNews([...copy]);
+      setNews([...copy]); 
       setAllNews([...data.data.list]);
     });
     if(pageNavigation==="information-service") {

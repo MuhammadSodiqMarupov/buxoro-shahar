@@ -9,6 +9,7 @@ import search from "../../Images/search.jpg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import home from "../../Images/home.svg";
+import stylesDropdown from '../../cssModules/dropdownMenu.module.css';
 function Header(props) {
   const [langShow, setLangShow] = useState(false);
   const [hamburger, setHamburger] = useState(false);
@@ -60,7 +61,6 @@ const menuBlock = () => {
     })
     setMediaShowFunctions([...copy]);
   },[props.navbarData])
-
   return (
     <>
       <div className="hamburger" id="hamburger">
@@ -170,7 +170,7 @@ const menuBlock = () => {
                       {item.title}
                     </DropdownToggle>
                     {item?.items?.length ? (
-                      <DropdownMenu>
+                      <DropdownMenu className="my_dropdown_menu">
                         {item.items.map((item1, index) => (
                           <DropdownItem
                             key={index}
