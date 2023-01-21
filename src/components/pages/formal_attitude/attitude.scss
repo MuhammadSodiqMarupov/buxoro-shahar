@@ -7,7 +7,9 @@
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    flex-wrap: wrap;
+    @media (max-width:1200px) {
+      flex-wrap: wrap;
+    }
     .attitude_content{
       display: flex;
       flex-direction: column;

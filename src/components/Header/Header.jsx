@@ -9,7 +9,6 @@ import search from "../../Images/search.jpg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import home from "../../Images/home.svg";
-import stylesDropdown from '../../cssModules/dropdownMenu.module.css';
 function Header(props) {
   const [langShow, setLangShow] = useState(false);
   const [hamburger, setHamburger] = useState(false);
