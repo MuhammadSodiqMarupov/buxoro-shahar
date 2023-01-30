@@ -60,7 +60,6 @@ const menuBlock = () => {
     })
     setMediaShowFunctions([...copy]);
   },[props.navbarData])
-
   return (
     <>
       <div className="hamburger" id="hamburger">
@@ -170,7 +169,7 @@ const menuBlock = () => {
                       {item.title}
                     </DropdownToggle>
                     {item?.items?.length ? (
-                      <DropdownMenu>
+                      <DropdownMenu className="my_dropdown_menu">
                         {item.items.map((item1, index) => (
                           <DropdownItem
                             key={index}

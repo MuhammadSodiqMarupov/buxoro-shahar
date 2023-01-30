@@ -23,6 +23,8 @@ import Lectures from "./components/pages/lectures/Lectures";
 import CurrentNew from "./components/pages/currentNew/CurrentNew";
 import NotFoundPage from "./Error/NotFoundPage";
 import FormalAttitude from "./components/pages/formal_attitude/FormalAttitude";
+import FotoGallery from "./components/pages/foto_gallery/Foto_Gallery";
+import VideoGallery from "./components/pages/video_gallery/Video_gallery";
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -69,19 +71,18 @@ function App() {
   function getBackendData() {
     let docURL = document.URL;
     let pageNavigation = docURL.substring(docURL.lastIndexOf("/") + 1);
-    setShowes([]);
     setNews([]);
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType ?? "1";
     console.log(pageNavigation)
     headerAPI("api/home/menus", langType).then((res) => {
+      let copyShowes = [];
       setNavbarData([...res.data.data]);
       res.data.data.map((item) => {
-        showes.push(false);
+        copyShowes.push(false);
       });
-      setShowes([...showes]);
+      setShowes([...copyShowes]);
       setNavbarData([...res.data.data]);
-
       let copy = [];
       let data = res.data.data;
       for (let i = 0; i < data.length; i += 2) {
@@ -98,6 +99,7 @@ function App() {
           second: data[i === data.length ? i : i + 1],
         });
       }
+      console.log([...titles]);
       setTitltes([...copy2]);
     });
 
@@ -108,7 +110,7 @@ function App() {
         copy.push(list[i]);
       }
       setTotalPage(data.data.maxPageNumber);
-      setNews([...copy]);
+      setNews([...copy]); 
       setAllNews([...data.data.list]);
     });
     if(pageNavigation==="information-service") {
@@ -280,6 +282,8 @@ function App() {
         <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
         <Route path="/404" element={<NotFoundPage />}/>
         <Route path="/formal-attitude" element={<FormalAttitude data={getDataFilter("formal-attitude")}/>}/>
+        <Route path="/gallery/photo" element={<FotoGallery data={getDataFilter("gallery/photo")}/>}/>
+        <Route path="/gallery/video" element={<VideoGallery data={getDataFilter("gallery/video")}/>}/>
       </Route>
     </Routes>
   );

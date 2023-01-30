@@ -19,6 +19,7 @@
     }
 
     .myDropdown {
+      height: 33px;
       background: white;
       border: none;
       padding: 0;
@@ -262,4 +263,12 @@
 .link_item {
   text-decoration: none;
   color: var(--blueReal);
+}
+.my_dropdown_menu {
+  transform: translate3d(0px, 25px, 0px);
+  border-radius: 0;
+  .dropdown-item:hover {
+    color: var(--blueReal);
+    background-color: #fff;
+  }
 }
