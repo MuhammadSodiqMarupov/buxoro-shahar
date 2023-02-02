@@ -1,9 +1,6 @@
 import "./Header.scss";
 import logo from "../../Images/logo.jpg";
 import { Dropdown } from "react-bootstrap";
-import DropdownToggle from "react-bootstrap/DropdownToggle";
-import DropdownMenu from "react-bootstrap/DropdownMenu";
-import DropdownItem from "react-bootstrap/DropdownItem";
 import { useEffect, useState } from "react";
 import search from "../../Images/search.jpg";
 import { Link } from "react-router-dom";
@@ -97,8 +94,11 @@ const menuBlock = () => {
             <div className={"part"} key={index}>
               <h1 className={"blue"}>{item.first.title}</h1>
               {item.first.items.map((item1, index1) => (
+                props.titlesCopy[index]?.first?.items[index1]?.page.startsWith("http")?<a href={props.titlesCopy[index]?.first?.items[index1]?.page}>
+                  <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                </a>:
                 <Link
-                  onClick={() => menuOpen()}
+                  onClick={() => menuBlock()}
                   key={index1}
                   to={props.titlesCopy[index]?.first?.items[index1]?.page
                     .toLowerCase()
@@ -110,8 +110,11 @@ const menuBlock = () => {
 
               <h1 className={"blue"}>{item.second?.title}</h1>
               {item.second?.items.map((item1, index1) => (
+                props.titlesCopy[index]?.second?.items[index1]?.page.startsWith("http")?<a href={props.titlesCopy[index]?.second?.items[index1]?.page}>
+                  <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                </a>:
                 <Link
-                  onClick={() => menuOpen()}
+                  onClick={() => menuBlock()}
                   key={index1}
                   to={props.titlesCopy[index]?.second?.items[index1]?.page
                     .toLowerCase()
@@ -166,13 +169,13 @@ const menuBlock = () => {
                       props.set([...props.titles]);
                     }}
                   >
-                    <DropdownToggle className={"myDropdown"}>
+                    <Dropdown.Toggle caret size="lg" className={"myDropdown"}>
                       {item.title}
-                    </DropdownToggle>
+                    </Dropdown.Toggle>
                     {item?.items?.length ? (
-                      <DropdownMenu className="my_dropdown_menu">
+                      <Dropdown.Menu className="my_dropdown_menu">
                         {item.items.map((item1, index) => (
-                          <DropdownItem
+                          <Dropdown.Item
                             key={index}
                             onClick={() => {
                               if (item1.page.startsWith("http")) {
@@ -189,9 +192,9 @@ const menuBlock = () => {
                             ) : (
                               item1.title
                             )}
-                          </DropdownItem>
+                          </Dropdown.Item>
                         ))}
-                      </DropdownMenu>
+                      </Dropdown.Menu>
                     ) : (
                       ""
                     )}
@@ -209,23 +212,23 @@ const menuBlock = () => {
               onMouseLeave={() => setLangShow(false)}
               onMouseOverCapture={() => setLangShow(true)}
             >
-              <DropdownToggle className={"myDropdown"}>
+              <Dropdown.Toggle className={"myDropdown"}>
                 {selectTxt}
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={() => changeLang("1", "O‘Z")}>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => changeLang("1", "O‘Z")}>
                   O‘Z
-                </DropdownItem>
-                <DropdownItem onClick={() => changeLang("2", "Cyrl")}>
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => changeLang("2", "Cyrl")}>
                   Cyrl
-                </DropdownItem>
-                <DropdownItem onClick={() => changeLang("3", "Rus")}>
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => changeLang("3", "Rus")}>
                   Rus
-                </DropdownItem>
-                <DropdownItem onClick={() => changeLang("4", "Eng")}>
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => changeLang("4", "Eng")}>
                   Eng
-                </DropdownItem>
-              </DropdownMenu>
+                </Dropdown.Item>
+              </Dropdown.Menu>
             </Dropdown>
             <Link to={"/request"} className={"murojaatButton"}>
               Murojjat yuborish
