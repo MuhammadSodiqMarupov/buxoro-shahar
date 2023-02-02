@@ -199,7 +199,7 @@ const menuBlock = () => {
                 ))
               : ""}
           </div>
-          <div className="right">
+          <div className="right ">
             <button className={"searchButton"}>
               <img width={20} height={24} src={search} alt="Searchjon" />
             </button>
