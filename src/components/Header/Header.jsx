@@ -155,6 +155,7 @@ const menuBlock = () => {
               ? props.navbarData.map((item, index) => (
                   <Dropdown
                     key={index}
+                    onClick={() => menuBlock()}
                     show={props.titles[index]}
                     onMouseOver={() => {
                       props.titles[index] = true;

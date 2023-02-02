@@ -1,0 +1,60 @@
+.Header1 {
+  width: 100%;
+  height: 50px;
+  background-color: #2D40D9;
+  .h1Container {
+    height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @media (max-width: 600px){
+      justify-content: center;
+    }
+
+    padding: 0 20px;
+    .h1Left{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 8px;
+      @media (max-width: 600px){
+        display: none;
+      }
+      button {
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+      }
+    p{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+      color: #ffff;
+    }
+    .h1Last{
+      button{
+        height: 32px;
+        background: #FFFFFF;
+        border-radius: 4px;
+        padding: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 550;
+        font-size: 14px;
+        line-height: 20px;
+        color: #2D40D9;
+        @media (max-width: 600px){
+          display: none;
+        }
+      }
+    }
+     }
+  }
