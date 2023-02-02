@@ -185,7 +185,7 @@ function App() {
               <>
                 <Navbar />
                 <Section2 Filter={getDataFilterByArr} />
-                <Section3 getDataFilterByArr={getDataFilterByArr} data={news} />
+                <Section3 setCurrentItem={setCurrentItem} getDataFilterByArr={getDataFilterByArr} data={news} />
                 <Section4 />
                 <FOTO_VIDEO_GALERY />
                 <Section5 />
