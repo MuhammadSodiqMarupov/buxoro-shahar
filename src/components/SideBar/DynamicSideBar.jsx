@@ -1,13 +1,14 @@
 import React,{useEffect,useState} from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.scss";
+import { useLocation } from "react-router-dom";
 const DynamicSideBar = ({ object}) => {
     const [FOUND,setFOUND] = useState("");
+    const location = useLocation();
     useEffect(()=>{
-        let docURL = document.URL;
-        let url = docURL.substring(docURL.lastIndexOf("/")+1)
+        let url = location.pathname;
         object?.items?.map(item=>{
-            if(item.page===url) {
+            if('/'+item.page===url) {
                 setFOUND(item.page);
                 return
             }

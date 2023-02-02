@@ -11,12 +11,12 @@ const Malumot = (props) => {
             <div className="malumotContainer">
                 <DynamicSideBar object={props.data}/>
                 <div className="malumot__content">
-                    <img src={xarita} alt=""/>
+                    <img src={xarita} alt="Loading Image....."/>
                     <h2> Buxoro shahar </h2>
                     <div className="population">
-                        <h2>  <img className="icon" src={users} alt=""/>  Aholisi:  870 200 kishi (4-o‘rin) </h2>
-                        <h2>  <img className="icon" src={house} alt=""/>  Din tarkibi: Musulmonlar, Xristianlar </h2>
-                        <h2>  <img className="icon" src={area} alt=""/>  Maydoni: 39 400 km2 </h2>
+                        <h2>  <img className="icon" src={users} alt="Loading Image....."/>  Aholisi:  870 200 kishi (4-o‘rin) </h2>
+                        <h2>  <img className="icon" src={house} alt="Loading Image....."/>  Din tarkibi: Musulmonlar, Xristianlar </h2>
+                        <h2>  <img className="icon" src={area} alt="Loading Image....."/>  Maydoni: 39 400 km2 </h2>
                     </div>
                         <p> <span> Buxoro- </span> Oʻzbekiston Respublikasining qadimiy shaharlaridan biri, Buxoro viloyatining maʼmuriy, iqtisodiy va madaniy markazi. Buyuk ipаk yoʻlida yirik tijorat markazlaridan boʻlgan. Oʻzbekistonning janubiy-gʻarbida, Zarafshon daryosi quyi oqimida joylashgan. Toshkentdan 616 km. Buxoro 2 ta shahar rayoni (Fayzulla Xoʻjayev va Toʻqimachilik)ga boʻlingan. Aholisi 290000 (2019). </p>
                         <p>

@@ -19,6 +19,7 @@
     }
 
     .myDropdown {
+      height: 33px;
       background: white;
       border: none;
       padding: 0;
@@ -28,9 +29,6 @@
       line-height: 20px;
       color: var(--black);
       align-items: center;
-      @media (max-width: 1140px) {
-        display: none;
-      }
 
       &::after {
         display: block;
@@ -38,6 +36,9 @@
         width: 16px;
         border: none;
         background-image: url("../../Images/dropDownLogo (1).jpg");
+      }
+      @media (max-width: 1140px) {
+        display: none;
       }
     }
 
@@ -51,6 +52,9 @@
         top:40%;
         cursor: pointer;
         z-index: 3;
+        @media (max-width:1260px) {
+          display: none;
+        }
       }
       .left-header {
         z-index: 3;
@@ -119,6 +123,106 @@
   background-position: center;
   position: fixed;
   height: 0vh;
+  transition: 0.4s ease;
+  background-color: #fff;
+  z-index: 2;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  @media (max-width:1260px) {
+    left: -100vw;
+  }
+  .part {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    h1 {
+      margin: 0;
+      display: inline;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 550;
+    }
+    .blue {
+      color: var(--blueReal);
+    }
+    a {
+      color: #222222;
+      text-decoration: none;
+    }
+  }
+}
+.dropdown-item:hover .show .myDropdown {
+  background-color: #000;
+}
+.myDropdown {
+  @media (max-width:1260px) {
+    display: none;
+  }
+}
+.home__logo {
+  margin-left: 10px;
+}
+.dropdown_media {
+  background: white;
+  border: none;
+  padding: 0;
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--black);
+  align-items: center;
+
+  &::after {
+    display: block;
+    height: 16px;
+    width: 16px;
+    border: none;
+    background-image: url("../../Images/dropDownLogo (1).jpg");
+  }
+  &:hover {
+    background-color: #fff;
+    color: #111111;
+  }
+}
+.hamburger_media {
+  display: none;
+  @media (max-width:1260px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    ul {
+      list-style-type: none;
+    }
+  }
+}
+.hamburger_default {
+  @media (max-width:1260px) {
+    display: none;
+  }
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+}
+.hamburger__active {
+  @media (max-width:1260px) {
+    transition: 0.4s ease;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    background-color: #fff;
+    background-image: none;
+    justify-content: start;
+  }
+  transition: 0.4s all;
+  height: 100vh;
+  background-color: #fff;
+    background-image: url('../../Images/gerbBG.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
   transition: 0.4s all;
   background-color: #fff;
   z-index: 2;
@@ -146,14 +250,25 @@
     }
   }
 }
-.dropdown-item:hover .show .myDropdown {
-  background-color: #000;
+.un_active ul {
+  display: none;
 }
-.dropdown {
-  @media (max-width:1260px) {
-    display: none;
+.close_menu__media {
+  position: absolute;
+  right: 5vw;
+  top: 0;
+  font-size: 40px;
+  cursor: pointer;
+}
+.link_item {
+  text-decoration: none;
+  color: var(--blueReal);
+}
+.my_dropdown_menu {
+  transform: translate3d(0px, 25px, 0px);
+  border-radius: 0;
+  .dropdown-item:hover {
+    color: var(--blueReal);
+    background-color: #fff;
   }
-}
-.home__logo {
-  margin-left: 10px;
 }
