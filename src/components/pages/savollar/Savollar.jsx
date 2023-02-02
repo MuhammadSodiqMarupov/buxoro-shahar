@@ -39,6 +39,7 @@ const Savollar = ({arr,getDataFilterByArr,data}) => {
     return (
         <div className='savollar'>
             <div className="savollar__container">
+
                 <DynamicSideBar object={data}/>
                 <div className="savollar_content">
                     <h1>{getDataFilterByArr(langData)}</h1>
