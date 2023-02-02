@@ -155,6 +155,7 @@ const menuBlock = () => {
               ? props.navbarData.map((item, index) => (
                   <Dropdown
                     key={index}
+                    onClick={() => menuBlock()}
                     show={props.titles[index]}
                     onMouseOver={() => {
                       props.titles[index] = true;
@@ -198,7 +199,7 @@ const menuBlock = () => {
                 ))
               : ""}
           </div>
-          <div className="right">
+          <div className="right ">
             <button className={"searchButton"}>
               <img width={20} height={24} src={search} alt="Searchjon" />
             </button>

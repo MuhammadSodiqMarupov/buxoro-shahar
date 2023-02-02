@@ -1,0 +1,58 @@
+.Navbar{
+  width: 100%;
+  height: 500px;
+  @media (max-width: 600px) {
+    height: 200px;
+  }
+  .NavbarContainer{
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+    .ForImg{
+      background-image: url("../../Images/BukharaImg.jpg");
+      height: 100%;
+      width: 100%;
+      padding-top: 60px;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (max-width: 600px) {
+        padding: 0;
+      }
+      .gerb{
+        object-fit: contain;
+        width: 15vw;
+        height: 15vh;
+        @media (max-width: 120px) {
+
+        }
+      }
+      .txt-media {
+        @media (max-width: 600px) {
+          font-size: 13px;
+        }
+      }
+      h1{
+        margin: 0;
+        font-weight: 300;
+        font-size: 28px;
+        color: #FFFFFF;
+      }
+      h2{
+        margin:0;
+        font-weight: 600;
+        font-size: 28px;
+        color: #FFFFFF;
+      }
+      p{
+        font-weight: 300;
+        margin: 0;
+        font-size: 20px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.attitude {
+  width: 100%;
+  padding-bottom: 30px;
+  .attitude_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    @media (max-width:1200px) {
+      flex-wrap: wrap;
+    }
+    .attitude_content{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h1{
+        font-weight: 550;
+        font-size: 36px;
+        color: #01012F;
+      }
+      p{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #111111;
+      }
+      h2{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #111111;
+      }
+      .attitudeCard{
+        height: 478px;
+        background: #F3F5F9;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .inpes{
+          display: flex;
+          justify-content: space-around;
+          .firstInp{
+            display: flex;
+            flex-direction: column;
+            p{
+              font-weight: 550;
+              font-size: 12px;
+              line-height: 16px;
+              color: #111111;
+            }
+            input{
+              height: 48px;
+              width: 400px;
+              background: #FFFFFF;
+              font-weight: 300;
+              padding: 12px;
+              font-size: 16px;
+              line-height: 24px;
+              color: #111111;
+            }
+          }
+
+        }
+        .bottomAttitudeInp{
+          p{
+            font-weight: 550;
+            font-size: 12px;
+            line-height: 16px;
+            color: #111111;
+          }
+          textarea{
+            width: 729px;
+            height: 182px;
+            padding: 12px;
+          }
+          button{
+            height: 48px;
+            width: 100%;
+            background: #2D40D9;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 14px;
+            color: #FFFFFF;
+
+          }
+        }
+      }
+    }
+  }
+}
