@@ -32,6 +32,7 @@ const CurrentNew = ({set,currentNew,allNews}) => {
                     <div className="sidebar_news">
                         {allNews.map(item=><div className='item_current_new' onClick={()=>{
                             set(item);
+                            window.scrollTo(0,0)
                             navigate("/new")
                         }}>
                             <div className="date">{item.date}</div>
