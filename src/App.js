@@ -36,6 +36,10 @@ const FOTO_VIDEO_GALERY = React.lazy(() =>
 );
 const Footer = React.lazy(() => import("./components/Footer/Footer"));
 function App() {
+  
+  const location = useLocation();
+
+
   const [news, setNews] = useState([]);
   const [anotherPage, setAnotherPage] = useState(false);
   const [navSideBar, setNavSideBar] = useState([]);
@@ -50,8 +54,8 @@ function App() {
   const [hokimlar,setHokimlar] = useState([]);
   const [currentItem,setCurrentItem] = useState({});
   const [elonlar,setElonlar] = useState([]);
-  const location = useLocation();
   const navigate = useNavigate();
+
 
   const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
 
@@ -154,9 +158,9 @@ function App() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     checkPage();
     getBackendData();
-    window.scroll(0, 0);
   }, [location.pathname]);
   useEffect(() => {
     checkPage();
