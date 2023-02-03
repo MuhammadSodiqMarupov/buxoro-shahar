@@ -17,7 +17,7 @@ function Header(props) {
       : "O‘Z"
   );
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function getFullTxtFromStorage(StringTxt) {
     if (StringTxt === "1") {
