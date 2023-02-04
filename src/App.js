@@ -10,7 +10,7 @@ import Address from "./components/pages/manzil/address";
 import Rahbariyat from "./components/pages/rahbariyat/rahbariyat";
 import Mayors from "./components/pages/mayors/mayors";
 import Request from "./components/pages/request/Request";
-import { useLocation } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import Malumot from "./components/pages/shahar-haqida/malumot/Malumot";
 import Deparments from "./components/pages/shahar-haqida/reginal_departments/Deparments";
 import Surovnoma from "./components/pages/ijtimoiy_sorovnoma/Surovnoma";
@@ -25,6 +25,7 @@ import NotFoundPage from "./Error/NotFoundPage";
 import FormalAttitude from "./components/pages/formal_attitude/FormalAttitude";
 import FotoGallery from "./components/pages/foto_gallery/Foto_Gallery";
 import VideoGallery from "./components/pages/video_gallery/Video_gallery";
+import DynamicPage from "./components/DynamicPage/dynamicPage";
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -36,9 +37,7 @@ const FOTO_VIDEO_GALERY = React.lazy(() =>
 );
 const Footer = React.lazy(() => import("./components/Footer/Footer"));
 function App() {
-  
   const location = useLocation();
-
 
   const [news, setNews] = useState([]);
   const [anotherPage, setAnotherPage] = useState(false);
@@ -50,16 +49,19 @@ function App() {
   const [totalPage, setTotalPage] = useState(1);
   const [services, setServices] = useState([]);
   const [rahbarlar, setRahbarlar] = useState([]);
-  const [surovnomalar,setSurovnomalar] = useState([]);
-  const [hokimlar,setHokimlar] = useState([]);
-  const [currentItem,setCurrentItem] = useState({});
-  const [elonlar,setElonlar] = useState([]);
-  const [video,setVideo] = useState([]);
-  const [photo,setPhoto] = useState([]);
+  const [surovnomalar, setSurovnomalar] = useState([]);
+  const [hokimlar, setHokimlar] = useState([]);
+  const [currentItem, setCurrentItem] = useState({});
+  const [elonlar, setElonlar] = useState([]);
+  const [video, setVideo] = useState([]);
+  const [pageId,setPageId] = useState("");
+  const [backendHTML,setBackendHTML] = useState("");
+  const [photo, setPhoto] = useState([]);
   const navigate = useNavigate();
 
 
-  const getDataFilterByArr = (dataArr) => dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
+  const getDataFilterByArr = (dataArr) =>
+    dataArr[parseInt(localStorage.getItem("langType") ?? "1") - 1];
 
   function getDataFilter(stringTitle) {
     let FOUND_OBJECT = {};
@@ -114,49 +116,53 @@ function App() {
         copy.push(list[i]);
       }
       setTotalPage(data.data.maxPageNumber);
-      setNews([...copy]); 
+      setNews([...copy]);
       setAllNews([...data.data.list]);
     });
-    if(pageNavigation==="information-service") {
+    if (pageNavigation === "information-service") {
       headerAPI("api/employee/3", langType).then(({ data }) => {
         setServices(data.data);
       });
-      return
-    }else if(pageNavigation==="mayors-of-cities-and-districts") {
+      return;
+    } else if (pageNavigation === "mayors-of-cities-and-districts") {
       headerAPI("api/employee/2", langType).then(({ data }) => {
         setRahbarlar(data.data);
       });
-      return
-    }else if(pageNavigation==="the-leadership-of-the-regional-administration") {
-      headerAPI("api/employee/1",langType).then(({data})=>{
-        setHokimlar(data.data)
-      }) 
-      return
-    }else if(pageNavigation==="social-questionnaire") {
-      headerAPI("api/survey/getAll",langType).then(({data})=>{
+      return;
+    } else if (
+      pageNavigation === "the-leadership-of-the-regional-administration"
+    ) {
+      headerAPI("api/employee/1", langType).then(({ data }) => {
+        setHokimlar(data.data);
+      });
+      return;
+    } else if (pageNavigation === "social-questionnaire") {
+      headerAPI("api/survey/getAll", langType).then(({ data }) => {
         let realData = data.data;
         setSurovnomalar([...realData]);
-      })
+      });
     }
-    if(pageNavigation==="announcements-and-tenders") {
-      headerAPI("api/post/2",langType).then(({data})=>{
+    if (pageNavigation === "announcements-and-tenders") {
+      headerAPI("api/post/2", langType).then(({ data }) => {
         let realData = data.data.list;
         setElonlar([...realData]);
-
-      })
+      });
     }
-    if(pageNavigation==="photo") {
-      headerAPI("api/gallery/photos",langType).then(({data})=>{
+    if (pageNavigation === "photo") {
+      headerAPI("api/gallery/photos", langType).then(({ data }) => {
         setPhoto(data.data);
-      })
-      return
+      });
+      return;
     }
-    if(pageNavigation==="video") {
-      headerAPI("api/gallery/videos",langType).then(({data})=>{
+    if (pageNavigation === "video") {
+      headerAPI("api/gallery/videos", langType).then(({ data }) => {
         setVideo(data.data);
-      })
+      });
     }
-    
+    setPageId(pageNavigation);
+    headerAPI("api/page/"+pageNavigation,langType).then(res=>{
+      setBackendHTML(res.data.data.text)
+    });
   }
 
   function checkPage() {
@@ -165,6 +171,7 @@ function App() {
     if (pageNavigation != "") {
       setAnotherPage(true);
     } else {
+     
       setAnotherPage(false);
     }
   }
@@ -201,7 +208,11 @@ function App() {
               <>
                 <Navbar Filter={getDataFilterByArr} />
                 <Section2 Filter={getDataFilterByArr} />
-                <Section3 setCurrentItem={setCurrentItem} getDataFilterByArr={getDataFilterByArr} data={news} />
+                <Section3
+                  setCurrentItem={setCurrentItem}
+                  getDataFilterByArr={getDataFilterByArr}
+                  data={news}
+                />
                 <Section4 />
                 <FOTO_VIDEO_GALERY />
                 <Section5 />
@@ -212,6 +223,7 @@ function App() {
           </>
         }
       >
+        <Route path="/:pageId" element={<DynamicPage htmlElement={backendHTML}/>} />
         <Route
           path="/information-service"
           element={
@@ -228,7 +240,8 @@ function App() {
         <Route
           path="/the-leadership-of-the-regional-administration"
           element={
-            <Rahbariyat arr={rahbarlar}
+            <Rahbariyat
+              arr={rahbarlar}
               data={getDataFilter(
                 "the-leadership-of-the-regional-administration"
               )}
@@ -237,8 +250,11 @@ function App() {
         />
         <Route
           path="/mayors-of-cities-and-districts"
-          element={ 
-            <Mayors arr={hokimlar} data={getDataFilter("mayors-of-cities-and-districts")} />
+          element={
+            <Mayors
+              arr={hokimlar}
+              data={getDataFilter("mayors-of-cities-and-districts")}
+            />
           }
         />
         <Route path={"/request"} element={<Request />} />
@@ -255,14 +271,20 @@ function App() {
         <Route
           path="/answers-to-frequently-asked-questions"
           element={
-            <Surovnoma 
+            <Surovnoma
               data={getDataFilter("answers-to-frequently-asked-questions")}
             />
           }
         />
         <Route
           path="/social-questionnaire"
-          element={<Savollar arr={surovnomalar} getDataFilterByArr={getDataFilterByArr} data={getDataFilter("social-questionnaire")} />}
+          element={
+            <Savollar
+              arr={surovnomalar}
+              getDataFilterByArr={getDataFilterByArr}
+              data={getDataFilter("social-questionnaire")}
+            />
+          }
         />
         <Route
           path="/hotels"
@@ -288,18 +310,46 @@ function App() {
         <Route
           path="/announcements-and-tenders"
           element={
-            <Tenders arr={elonlar} data={getDataFilter("announcements-and-tenders")} />
+            <Tenders
+              arr={elonlar}
+              data={getDataFilter("announcements-and-tenders")}
+            />
           }
         />
         <Route
           path="/official-lectures"
           element={<Lectures data={getDataFilter("official-lectures")} />}
         />
-        <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
-        <Route path="/404" element={<NotFoundPage />}/>
-        <Route path="/formal-attitude" element={<FormalAttitude data={getDataFilter("formal-attitude")}/>}/>
-        <Route path="/gallery/photo" element={<FotoGallery photos={photo} data={getDataFilter("gallery/photo")}/>}/>
-        <Route path="/gallery/video" element={<VideoGallery videos={video} data={getDataFilter("gallery/video")}/>}/>
+        <Route
+          path="/new"
+          element={
+            <CurrentNew
+              set={setCurrentItem}
+              currentNew={currentItem}
+              allNews={allNews}
+            />
+          }
+        />
+        <Route path="/404" element={<NotFoundPage />} />
+        <Route
+          path="/formal-attitude"
+          element={<FormalAttitude data={getDataFilter("formal-attitude")} />}
+        />
+        <Route
+          path="/gallery/photo"
+          element={
+            <FotoGallery photos={photo} data={getDataFilter("gallery/photo")} />
+          }
+        />
+        <Route
+          path="/gallery/video"
+          element={
+            <VideoGallery
+              videos={video}
+              data={getDataFilter("gallery/video")}
+            />
+          }
+        />
       </Route>
     </Routes>
   );
