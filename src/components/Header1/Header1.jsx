@@ -7,19 +7,19 @@ import warning from "../../Images/warning.svg"
 const data = [
     {
         text:"Sayt test rejimda ishlamoqda",
-        btn:"Murojjat yuborish"
+        btn:"Maxsus imkoniyatlar"
     },
     {
         text:"Сайт тест режимда ишламоқда",
-        btn:"Мурожжат юбориш"
+        btn:"Махсус имкониятлар"
     },
     {
         text:"Сайт находится в тестовом режиме",
-        btn:"Отправить запрос"
+        btn:"Специальные возможности"
     },
     {
         text:"The site is in test mode",
-        btn:"Send a request"
+        btn:"Special opportunities"
     }
 ]
 function Header1({ getDataFilterByArr }) {
