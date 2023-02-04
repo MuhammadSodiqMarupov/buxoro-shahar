@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 function Section2({ Filter }) {
     const langData = [
         {
-            name:"Jamol Shuhratovich Nosirov ",
-            occupation:"Buxoro shahar hokimi",
+            name:"Sharopov Jamshid Fazliddinovich ",
+            occupation:"Shofirkon tuman hokimi",
             txt1:"☑️ Jamol Nosirov 1985 yil 12 iyunda Buxoro shahrida tavallud topgan. ",
             txt2:" ☑️ 2005 yili Buxoro davlat universitetining jismoniy madaniyat va jismoniy tarbiya o'qituvchisi psixolog mutaxassisligi bo'yicha tamomlangan ",
             txt3:" ☑️ 2008 yili esa universitetning magistraturasi tugatgan ",
@@ -19,8 +19,8 @@ function Section2({ Filter }) {
             btn:"Elektron murojjat"
         },
         {
-            name:"Жамол Шуҳратович Носиров ",
-            occupation:"Бухоро шаҳар ҳокими",
+            name:"Шаропов Джамшид Фазлиддинович ",
+            occupation:"Шофиркон туман ҳокими",
             txt1:"☑️ Жамол Носиров 1985 йил 12 июнда Бухоро шаҳрида таваллуд топган. ",
             txt2:" ☑️ 2005 йили Бухоро давлат университетининг жисмоний маданият ва жисмоний тарбия ўқитувчиси психолог мутахассислиги бўйича тамомланган ",
             txt3:" ☑️ 2008 йили эса университетнинг магистратураси тугатган ",
@@ -32,8 +32,8 @@ function Section2({ Filter }) {
             btn:"Електрон мурожжат"
         },
         {
-             name: "Джамал Шухратович Носиров",
-             occupation:"мэр Бухары",
+             name: "Шаропов Джамшид Фазлиддинович",
+             occupation:"аким Шафирконского района",
              txt1:"☑️ Джамал Носиров родился 12 июня 1985 года в городе Бухара. ",
              txt2: "☑️ В 2005 году учитель физической культуры и физического воспитания окончила Бухарский государственный университет по специальности психолог",
              txt3: "☑️ В 2008 году окончил магистратуру университета",
@@ -45,8 +45,8 @@ function Section2({ Filter }) {
              btn: "Электронная заявка"
         },
         {
-             name:"Jamal Shukhratovich Nosirov",
-             occupation: "Mayor of Bukhara",
+             name:"Sharopov Jamshid Fazliddinovich",
+             occupation: "Shafirkon district governor",
              txt1:"☑️ Jamal Nosirov was born on June 12, 1985 in the city of Bukhara. ",
              txt2:" ☑️ In 2005, a teacher of physical culture and physical education graduated from Bukhara State University with a specialization in psychology",
              txt3:" ☑️ In 2008, he graduated from the university's master's degree ",
