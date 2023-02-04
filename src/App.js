@@ -142,27 +142,29 @@ function App() {
         setSurovnomalar([...realData]);
       });
     }
-    if (pageNavigation === "announcements-and-tenders") {
+     else if (pageNavigation === "announcements-and-tenders") {
       headerAPI("api/post/2", langType).then(({ data }) => {
         let realData = data.data.list;
         setElonlar([...realData]);
       });
     }
-    if (pageNavigation === "photo") {
+    else if (pageNavigation === "photo") {
       headerAPI("api/gallery/photos", langType).then(({ data }) => {
         setPhoto(data.data);
       });
       return;
     }
-    if (pageNavigation === "video") {
+    else if (pageNavigation === "video") {
       headerAPI("api/gallery/videos", langType).then(({ data }) => {
         setVideo(data.data);
       });
-    }
+      return
+    }else {
     setPageId(pageNavigation);
     headerAPI("api/page/"+pageNavigation,langType).then(res=>{
       setBackendHTML(res.data.data.text)
     });
+  }
   }
 
   function checkPage() {
