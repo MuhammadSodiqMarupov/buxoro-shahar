@@ -54,6 +54,8 @@ function App() {
   const [hokimlar,setHokimlar] = useState([]);
   const [currentItem,setCurrentItem] = useState({});
   const [elonlar,setElonlar] = useState([]);
+  const [video,setVideo] = useState([]);
+  const [photo,setPhoto] = useState([]);
   const navigate = useNavigate();
 
 
@@ -78,7 +80,6 @@ function App() {
     setNews([]);
     let localLangType = localStorage.getItem("langType");
     let langType = localLangType ?? "1";
-    console.log(pageNavigation)
     headerAPI("api/home/menus", langType).then((res) => {
       let copyShowes = [];
       setNavbarData([...res.data.data]);
@@ -103,7 +104,6 @@ function App() {
           second: data[i === data.length ? i : i + 1],
         });
       }
-      console.log([...titles]);
       setTitltes([...copy2]);
     });
 
@@ -142,9 +142,21 @@ function App() {
       headerAPI("api/post/2",langType).then(({data})=>{
         let realData = data.data.list;
         setElonlar([...realData]);
-        console.log(realData)
+
       })
     }
+    if(pageNavigation==="photo") {
+      headerAPI("api/gallery/photos",langType).then(({data})=>{
+        setPhoto(data.data);
+      })
+      return
+    }
+    if(pageNavigation==="video") {
+      headerAPI("api/gallery/videos",langType).then(({data})=>{
+        setVideo(data.data);
+      })
+    }
+    
   }
 
   function checkPage() {
@@ -286,8 +298,8 @@ function App() {
         <Route path="/new" element={<CurrentNew set={setCurrentItem} currentNew={currentItem} allNews={allNews}/>}/>
         <Route path="/404" element={<NotFoundPage />}/>
         <Route path="/formal-attitude" element={<FormalAttitude data={getDataFilter("formal-attitude")}/>}/>
-        <Route path="/gallery/photo" element={<FotoGallery data={getDataFilter("gallery/photo")}/>}/>
-        <Route path="/gallery/video" element={<VideoGallery data={getDataFilter("gallery/video")}/>}/>
+        <Route path="/gallery/photo" element={<FotoGallery photos={photo} data={getDataFilter("gallery/photo")}/>}/>
+        <Route path="/gallery/video" element={<VideoGallery videos={video} data={getDataFilter("gallery/video")}/>}/>
       </Route>
     </Routes>
   );

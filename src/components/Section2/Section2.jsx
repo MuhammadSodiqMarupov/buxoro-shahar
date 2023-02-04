@@ -57,7 +57,7 @@ function Section2({ Filter }) {
              txt9:" ✅ On May 5, 2021, Jamal Nosirov was confirmed as the mayor of Bukhara at an extraordinary session of the People's Deputies of the City Council of Bukhara.",
              btn: "Electronic application"
         },
-    ]
+    ];
     const navigate = useNavigate();
     return (
         <div className="Section2">
