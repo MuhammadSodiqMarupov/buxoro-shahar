@@ -132,8 +132,10 @@ function App() {
     } else if (
       pageNavigation === "the-leadership-of-the-regional-administration"
     ) {
-      headerAPI("api/employee/1", langType).then(({ data }) => {
-        setHokimlar(data.data);
+      headerAPI("api/employee/1", langType).then((res) => {
+        let data = res.data.data.items;
+        console.log("mayors", data)
+        setHokimlar([...data]);
       });
       return;
     } else if (pageNavigation === "social-questionnaire") {

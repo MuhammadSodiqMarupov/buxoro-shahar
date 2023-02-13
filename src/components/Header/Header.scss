@@ -3,6 +3,7 @@
   height: 100px;
   background-color: #fff;
   z-index: 9999;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
   .myContainer {
     height: 100%;
     max-width: 1600px;
@@ -130,6 +131,7 @@
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
+  overflow-y: scroll;
   @media (max-width:1260px) {
     left: -100vw;
   }
@@ -215,6 +217,7 @@
     background-color: #fff;
     background-image: none;
     justify-content: start;
+    overflow-y: scroll;
   }
   transition: 0.4s all;
   height: 100vh;

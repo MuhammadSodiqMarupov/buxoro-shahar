@@ -104,14 +104,14 @@ const menuBlock = () => {
                     .toLowerCase()
                     .replaceAll(" ", "_")}
                 >
-                  <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                  <h1 className={item1.isPage ? "" : ""}>{item1.title}</h1>
                 </Link>
               ))}
 
               <h1 className={"blue"}>{item.second?.title}</h1>
               {item.second?.items.map((item1, index1) => (
                 props.titlesCopy[index]?.second?.items[index1]?.page.startsWith("http")?<a href={props.titlesCopy[index]?.second?.items[index1]?.page}>
-                  <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                  <h1 className={item1.isPage ? "" : ""}>{item1.title}</h1>
                 </a>:
                 <Link
                   onClick={() => menuBlock()}
@@ -120,7 +120,7 @@ const menuBlock = () => {
                     .toLowerCase()
                     .replaceAll(" ", "_")}
                 >
-                  <h1 className={item1.isPage ? "blue" : ""}>{item1.title}</h1>
+                  <h1 className={item1.isPage ? "" : ""}>{item1.title}</h1>
                 </Link>
               ))}
             </div>
