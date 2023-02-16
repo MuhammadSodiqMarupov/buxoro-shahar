@@ -133,9 +133,8 @@ function App() {
       pageNavigation === "the-leadership-of-the-regional-administration"
     ) {
       headerAPI("api/employee/1", langType).then((res) => {
-        let data = res.data.data.items;
-        console.log("mayors", data)
-        setHokimlar([...data]);
+        let data = res.data.data;
+        setHokimlar(data);
       });
       return;
     } else if (pageNavigation === "social-questionnaire") {
@@ -216,9 +215,10 @@ function App() {
                   setCurrentItem={setCurrentItem}
                   getDataFilterByArr={getDataFilterByArr}
                   data={news}
+                  
                 />
                 <Section4 />
-                <FOTO_VIDEO_GALERY />
+                <FOTO_VIDEO_GALERY videos={video} />
                 <Section5 />
               </>
             )}
