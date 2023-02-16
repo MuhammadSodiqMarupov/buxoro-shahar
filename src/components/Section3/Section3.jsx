@@ -7,7 +7,6 @@ import { domen } from "../../headerAPI";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 function Section3({ getDataFilterByArr, data,setCurrentItem, videos}) {
-  console.log(data);
   const navigate = useNavigate();
   const [langData, setLangData] = useState([
     {

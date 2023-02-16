@@ -119,6 +119,9 @@ function App() {
       setNews([...copy]);
       setAllNews([...data.data.list]);
     });
+    headerAPI("api/gallery/videos", langType).then(({ data }) => {
+      setVideo(data.data);
+    });
     if (pageNavigation === "information-service") {
       headerAPI("api/employee/3", langType).then(({ data }) => {
         setServices(data.data);
@@ -154,12 +157,6 @@ function App() {
         setPhoto(data.data);
       });
       return;
-    }
-    else if (pageNavigation === "video") {
-      headerAPI("api/gallery/videos", langType).then(({ data }) => {
-        setVideo(data.data);
-      });
-      return
     }else {
     setPageId(pageNavigation);
     headerAPI("api/page/"+pageNavigation,langType).then(res=>{
