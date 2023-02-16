@@ -10,20 +10,28 @@ function Section4(props) {
             <div className="S4Container">
                 <div className="LeftCardsMy">
                 <div className="item">
+                    <a href="#">
                     <LazyLoadImage src={pencil} effect={"blur"}/>
                     <p> Fuqaro murojaatlari bilan ishlash (Virtual qabulxona) </p>
+                    </a>
                 </div>
                     <div className="item">
+                        <a href="#">
                         <LazyLoadImage src={bloknot} effect={"blur"}/>
                         <p> Fuqarolardan taklif va mulohazalarini olish </p>
+                        </a>
                     </div>
                     <div className="item">
+                        <a href="#">
                         <LazyLoadImage src={star} effect={"blur"}/>
                         <p> Hududlarni rivojlantirish xizmati </p>
+                        </a>
                     </div>
                     <div className="item">
+                        <a href="#">
                         <LazyLoadImage src={car} effect={"blur"}/>
                         <p> Shahar transporti bo‘yicha ma’lumot </p>
+                        </a>
                     </div>
                 </div>
                 {/* <div className="RightBigCard">

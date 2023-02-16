@@ -60,31 +60,32 @@ function Section2({ Filter }) {
     ];
     const navigate = useNavigate();
     return (
-        <div className="Section2">
-            <div className="S2Container">
-                <div className="left_part">
-                <h1>
-                    <LazyLoadImage src={galochka} effect={"blur"}/>
-                    {Filter(langData).name}
-                   </h1>
-                    <h1>{Filter(langData).occupation}</h1>
-                    <div className="TextsCard">
-                        <p>{Filter(langData).txt1}</p>
-                        <p>{Filter(langData).txt2}</p>
-                        <p>{Filter(langData).txt3}</p>
-                        <p>{Filter(langData).txt4}</p>
-                        <p>{Filter(langData).txt5}</p>
-                        <p>{Filter(langData).txt7}</p>
-                        <p>{Filter(langData).txt8}</p>
-                        <p>{Filter(langData).txt9}</p>
-                    </div>
-                </div>
-                <div className="right_part">
-                    <img src={boshliq} className={"boshliq"} alt="Loading Image....."/>
-                    <button onClick={()=>navigate('/request')}><i className="fa-regular fa-envelope"></i> {Filter(langData).btn}</button>
-                </div>
-            </div>
-        </div>
+        <div></div>
+        // <div className="Section2">
+        //     <div className="S2Container">
+        //         <div className="left_part">
+        //         <h1>
+        //             <LazyLoadImage src={galochka} effect={"blur"}/>
+        //             {Filter(langData).name}
+        //            </h1>
+        //             <h1>{Filter(langData).occupation}</h1>
+        //             <div className="TextsCard">
+        //                 <p>{Filter(langData).txt1}</p>
+        //                 <p>{Filter(langData).txt2}</p>
+        //                 <p>{Filter(langData).txt3}</p>
+        //                 <p>{Filter(langData).txt4}</p>
+        //                 <p>{Filter(langData).txt5}</p>
+        //                 <p>{Filter(langData).txt7}</p>
+        //                 <p>{Filter(langData).txt8}</p>
+        //                 <p>{Filter(langData).txt9}</p>
+        //             </div>
+        //         </div>
+        //         <div className="right_part">
+        //             <img src={boshliq} className={"boshliq"} alt="Loading Image....."/>
+        //             <button onClick={()=>navigate('/request')}><i className="fa-regular fa-envelope"></i> {Filter(langData).btn}</button>
+        //         </div>
+        //     </div>
+        // </div>
     );
 }
 
