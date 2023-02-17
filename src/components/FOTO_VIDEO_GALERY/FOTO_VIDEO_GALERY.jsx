@@ -15,7 +15,7 @@ function FotoVideoGalery(props) {
   const [phone, setPhone] = useState(false);
   const x = window.matchMedia("(max-width: 500px)");
 
-  console.log(props.videos);
+  console.log(props.photos);
 
   useEffect(() => {
     if (x.matches) {
@@ -68,9 +68,10 @@ function FotoVideoGalery(props) {
               Barchasini ko‘rish
             </Link>
           </div>
+     
           <div className="content-swiper">
             {phone ? (
-              props.videos.map((item, index) => (
+              props.photos.map((item, index) => (
                 <div key={index} className="content-phone">
                   <div className="top">
                     <LazyLoadImage src={minor} />

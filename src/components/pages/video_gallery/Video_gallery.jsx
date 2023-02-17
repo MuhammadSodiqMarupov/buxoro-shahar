@@ -9,7 +9,7 @@ const VideoGallery = ({ videos, data }) => {
   const [videoModal, setVideoModal] = useState(false);
   const [currentSrc, setCurrentSrc] = useState("");
   const navigate = useNavigate();
-  console.log(videos);
+  // console.log(videos);
   return (
     <div className="video">
       {videoModal ? (

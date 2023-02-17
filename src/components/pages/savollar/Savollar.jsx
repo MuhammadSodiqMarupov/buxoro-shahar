@@ -35,7 +35,7 @@ const Savollar = ({arr,getDataFilterByArr,data}) => {
             }
         }
     }
-    console.log(liked);
+    // console.log(liked);
     return (
         <div className='savollar'>
             <div className="savollar__container">
