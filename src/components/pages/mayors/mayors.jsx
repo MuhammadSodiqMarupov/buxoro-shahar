@@ -9,7 +9,7 @@ import odam from "../../../Images/odam.svg"
 import { domen } from '../../../headerAPI';
 import RahbarlarList from '../../../data/RahbarlarList';
 const Mayors = (props) => {
-    console.log("arr", props.arr);
+    // console.log("arr", props.arr);
     return (
         <div className='mayors'>
             <div className="mayorContainer">
