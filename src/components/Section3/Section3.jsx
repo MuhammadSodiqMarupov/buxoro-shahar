@@ -10,19 +10,19 @@ function Section3({ getDataFilterByArr, data,setCurrentItem, videos}) {
   const navigate = useNavigate();
   const [langData, setLangData] = useState([
     {
-      txt: "  🆕 Shahar yangiliklari",
+      txt: "  🆕 Tuman yangiliklari",
       link: "  Barchasi",
     },
     {
-      txt: " 🆕 Шахар Йанигиликлари",
+      txt: " 🆕 Туман янгиликлари",
       link: "Барчаси",
     },
     {
-      txt: "🆕 Новости Города",
+      txt: "🆕 Новости района",
       link: "Все",
     },
     {
-      txt: "🆕 City News",
+      txt: "🆕 District news",
       link: "All",
     },
   ]);

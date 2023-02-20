@@ -3,22 +3,22 @@ import Gerb from '../../Images/Gerb.svg'
 function Navbar({Filter}) {
     const langData = [
         {
-            h1: "O‘zbekiston Respublikasi",
+            h1: "Buxoro viloyati",
             h2: "Shofirkon tuman",
             p: "rasmiy veb sayti"
         },
         {
-            h1: "Ўзбекистон Республикаси",
+            h1: "Бухоро вилояти",
             h2: "Шофиркон туман",
             p: "расмий веб сайти"
         },
         {
-            h1: "Республика Узбекистан",
+            h1: "Бухарская область",
             h2: "Шафирконский район",
             p: "Официальный веб-сайт"
         },
         {
-            h1: "Republic of Uzbekistan",
+            h1: "Bukhara region",
             h2: "Shafirkon district",
             p: "official website"
         },
