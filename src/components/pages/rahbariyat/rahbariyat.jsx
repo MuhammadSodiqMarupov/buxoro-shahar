@@ -12,11 +12,12 @@ const Rahbariyat = (props) => {
     const [popupcontent, setPopupcontent] = useState({});
     const [popuptoggle, setPopuptoggle] = useState(false);
 
-    const changeContent = (item) =>{
-        setPopupcontent({...item});
+    const changeContent = (arr) =>{
+        setPopupcontent({...arr});
         setPopuptoggle(!popuptoggle);
     }
     return (
+        
         <>        
         <div className='chief'>
             <div className="chiefContainer">
@@ -29,7 +30,7 @@ const Rahbariyat = (props) => {
                         <div className="right">
                             <div className="top">
                                 <p>{item.fio}</p>
-                                <button onClick={()=>changeContent(props.item)} > Batafsil </button>
+                                <button onClick={()=>changeContent(props.arr)} > Batafsil </button>
                             </div>
                             <h3 className="Name">{item.position}</h3>
                             <small>{item.briefly}</small>

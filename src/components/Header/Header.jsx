@@ -6,7 +6,9 @@ import search from "../../Images/search.jpg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import home from "../../Images/home.svg";
+import Search from "../search";
 function Header(props) {
+  const [searchModal, setSearchModal] = useState(false);
   const [langShow, setLangShow] = useState(false);
   const [hamburger, setHamburger] = useState(false);
   const [allNews,setAllNews] = useState([]);
@@ -190,6 +192,7 @@ const menuBlock = () => {
                                 {item1.title}
                               </a>
                             ) : (
+                             
                               item1.title
                             )}
                           </Dropdown.Item>
@@ -204,7 +207,7 @@ const menuBlock = () => {
           </div>
           <div className="right ">
             <button className={"searchButton"}>
-              <img width={20} height={24} src={search} alt="Searchjon" />
+              <img onClick={()=>{setSearchModal(true)}} width={20} height={24} src={search} alt="Searchjon" />
             </button>
             <Dropdown
               className={"langButton"}
@@ -234,6 +237,7 @@ const menuBlock = () => {
               Murojjat yuborish
             </Link>
           </div>
+          <Search searchModal={searchModal} onClose={()=>setSearchModal(false)}/>
         </div>
       </div>
     </>
