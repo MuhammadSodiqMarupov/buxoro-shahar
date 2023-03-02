@@ -150,7 +150,7 @@ const menuBlock = () => {
               />
               {hamburger ? (
                 <p className={"close_menu"} onClick={() => menuBlock()}>
-                  CLOSE
+                  X
                 </p>
               ) : (
                 ""
@@ -220,13 +220,13 @@ const menuBlock = () => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => changeLang("1", "O‘Z")}>
-                  O‘Z
+                  O‘Zb
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => changeLang("2", "Cyrl")}>
-                  Cyrl
+                Ўзб 
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => changeLang("3", "Rus")}>
-                  Rus
+                Рус
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => changeLang("4", "Eng")}>
                   Eng

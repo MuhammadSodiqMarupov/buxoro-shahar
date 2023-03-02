@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useEffect } from 'react';
+import xjon from "../Images/x-square.svg"
 
 const Search = ({searchModal, onClose}) => {
     let result = useRef();
@@ -84,7 +85,7 @@ const Search = ({searchModal, onClose}) => {
     }
 return (
     <section className="search-modal">
-        <i className="ri-close-line close-search" onClick={()=>onClose(false)}>Close</i>
+        <i className="ri-close-line close-search" onClick={()=>onClose(false)}><img src={xjon} /></i>
         <div className="search_form">
             <div className="input-btn">
                 <input 

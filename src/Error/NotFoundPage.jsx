@@ -1,10 +1,10 @@
 import React from 'react';
-
+import NotFound from "../Images/error404.gif"
 const NotFoundPage = () => {
     return (
         <div className='404'>
             <div className="container">
-                <img src={"http://bukhara.xushnazarov.uz/assets/svg/404.svg"} alt="" />
+                <img src={NotFound} alt="" />
             </div>
         </div>
     );

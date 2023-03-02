@@ -4,22 +4,22 @@ function Navbar({Filter}) {
     const langData = [
         {
             h1: "Buxoro viloyati",
-            h2: "Shofirkon tuman",
+            h2: "Shofirkon tuman hokimligi",
             p: "rasmiy veb sayti"
         },
         {
             h1: "Бухоро вилояти",
-            h2: "Шофиркон туман",
+            h2: "Шофиркон туман ҳокимлиги",
             p: "расмий веб сайти"
         },
         {
             h1: "Бухарская область",
-            h2: "Шафирконский район",
+            h2: "Администрация Шафирконского района",
             p: "Официальный веб-сайт"
         },
         {
             h1: "Bukhara region",
-            h2: "Shafirkon district",
+            h2: "Shafirkon district administration",
             p: "official website"
         },
     ]
