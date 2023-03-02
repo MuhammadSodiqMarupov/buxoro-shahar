@@ -19,8 +19,8 @@
     }
     .bottom{
       display: flex;
-      gap: 20px;
-      justify-content: center;
+      gap: 50px;
+      justify-content: space-around;
       flex-wrap: wrap;
       width: 100%;
       .card1{
@@ -49,6 +49,28 @@
         gap: 4px;
         cursor: pointer;
       }
+      .card2 :hover{
+        // width: 183px;
+        // height: 183px;
+        left: 200px;
+        top: 136px;
+        background: #EFF1FC;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .card3{
+          width: 130px;
+          height: 120px;
+        }
+      }
+      .card3{
+        width: 110px;
+        height: 110px;
+      }
+      
     }
   }
 

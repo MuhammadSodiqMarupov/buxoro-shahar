@@ -20,7 +20,7 @@ const FormalAttitude = ({ data}) => {
                             </div>
                             <div className="firstInp">
                                 <p> E-mail* </p>
-                                <input placeholder="Eshmat1991@gmail.com" type="text"/>
+                                <input placeholder="jahongirbeshimov96@gmail.com" type="text"/>
                             </div>
                         </div>
                         <div className="bottomAttitudeInp">

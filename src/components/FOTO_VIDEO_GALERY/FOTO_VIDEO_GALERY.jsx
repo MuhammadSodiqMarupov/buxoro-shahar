@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import minor from "../../Images/minor.jpg";
 import { Link } from "react-router-dom";
+import { domen } from "../../headerAPI";
 import player from "../../Images/player.svg";
 import "react-modal-video/scss/modal-video.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -64,7 +65,7 @@ function FotoVideoGalery(props) {
                 Fotogalereya
               </h1>
             </div>
-            <Link className={"link"} to={"#"}>
+            <Link className={"link"} to={"gallery/photo"}>
               Barchasini ko‘rish
             </Link>
           </div>
@@ -83,7 +84,7 @@ function FotoVideoGalery(props) {
                           setCurrentSrc(item.urlVideo.substring(0,item.urlVideo.lastIndexOf("/")+1)+"/embed/"+item.urlVideo.substring(item.urlVideo.lastIndexOf("=")+1))
                           setVideoModal(true);
                         }}
-                        src={player}
+                        src={domen+item.photos[0].imageUrl}
                         className={"player"}
                         alt="Loading Image....."
                       />

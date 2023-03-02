@@ -34,6 +34,14 @@
         line-height: 28px;
         color: #FFFFFF;
       }
+      .item :hover{
+       p{
+        font-size: 25px;
+       }
+       img{
+        width: 150%;
+       }
+      }
     }
     .RightBigCard{
       width: 387px;

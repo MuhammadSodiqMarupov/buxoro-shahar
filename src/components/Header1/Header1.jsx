@@ -42,7 +42,7 @@ function Header1({ getDataFilterByArr }) {
                 </div>
                 <p><img src={warning} alt="Loading Image....."/>{getDataFilterByArr(data).text}</p>
                 <div className="h1Last">
-                    <button>{getDataFilterByArr(data).btn}</button>
+                    {/* <button>{getDataFilterByArr(data).btn}</button> */}
                 </div>
             </div>
         </div>

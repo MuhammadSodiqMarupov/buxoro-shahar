@@ -1,4 +1,5 @@
 import "./Footer.scss"
+import {Link} from "react-router-dom"
 import twitter from "../../Images/twitter 1.svg"
 import facebook from "../../Images/facebook 1.svg"
 import youtube from "../../Images/youtube 1.svg"
@@ -13,12 +14,14 @@ function Footer() {
                 <div className="lastLeft">
                    <div className="top">
                         <p className="call"> Telefon </p>
-                        <h1 className="callNumber"> +998 90 123 45 67 </h1>
+                        <h1 className="callNumber"> (65) 502-20-04</h1>
                    </div>
                     <div className="apps">
                         <button><LazyLoadImage src={twitter} effect={"blur"}/></button>
                         <button><LazyLoadImage src={instagram} effect={"blur"}/> </button>
+                        <Link to={"//www.facebook.com/shofirkontuman.hokimligi"}>
                         <button><LazyLoadImage src={facebook} effect={"blur"} /> </button>
+                        </Link>
                         <button><LazyLoadImage src={youtube} effect={"blur"}/> </button>
                     </div>
                     <button onClick={()=>navigate("/request")} className="btn"> <i className="fa-regular fa-envelope"></i>  Elektron murojjat</button>
@@ -26,11 +29,11 @@ function Footer() {
                 <div className="lastMiddle">
                     <div className="other">
                          <h1> Manzil </h1>
-                          <p> Mustaqillik ko‘chasi, 15-uy </p>
+                          <p> Шофиркон шахар Мустакиллик кучаси 4-уй </p>
                     </div>
                        <div className="other">
                            <h1> E-mail </h1>
-                           <p> Shofirkon_tuman@gmail.com </p>
+                           <p> Shofirkon.@exat.uz </p>
                        </div>
 
                 </div>

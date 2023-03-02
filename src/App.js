@@ -26,6 +26,11 @@ import FormalAttitude from "./components/pages/formal_attitude/FormalAttitude";
 import FotoGallery from "./components/pages/foto_gallery/Foto_Gallery";
 import VideoGallery from "./components/pages/video_gallery/Video_gallery";
 import DynamicPage from "./components/DynamicPage/dynamicPage";
+
+import Sidebar__top from "./components/sd/Sidebar__top";
+import Sidebarjon from "./components/sd/Sidebar";
+
+
 const Header = React.lazy(() => import("./components/Header/Header"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Section2 = React.lazy(() => import("./components/Section2/Section2"));
@@ -57,6 +62,7 @@ function App() {
   const [pageId,setPageId] = useState("");
   const [backendHTML,setBackendHTML] = useState("");
   const [photo, setPhoto] = useState([]);
+  const [maruza, setMaruza] = useState([]);
   const navigate = useNavigate();
 
 
@@ -150,6 +156,12 @@ function App() {
       headerAPI("api/post/2", langType).then(({ data }) => {
         let realData = data.data.list;
         setElonlar([...realData]);
+      });
+    }
+    else if(pageNavigation === "official-lectures"){
+      headerAPI("api/post/4", langType).then(({ data }) => {
+        let realData = data.data.list;
+        setMaruza([...realData]);
       });
     }
     else if (pageNavigation === "photo") {
@@ -318,6 +330,7 @@ function App() {
           }
         />
         <Route
+          maruza={maruza}
           path="/official-lectures"
           element={<Lectures data={getDataFilter("official-lectures")} />}
         />
@@ -331,7 +344,7 @@ function App() {
             />
           }
         />
-        <Route path="/404" element={<NotFoundPage />} />
+        {/* <Route path="/404" element={<NotFoundPage />} /> */}
         <Route
           path="/formal-attitude"
           element={<FormalAttitude data={getDataFilter("formal-attitude")} />}
@@ -352,6 +365,7 @@ function App() {
           }
         />
       </Route>
+      <Route path="/*" element={<NotFoundPage />} />
     </Routes>
   );
 }
