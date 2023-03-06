@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import home from "../../Images/home.svg";
 import Search from "../search";
+import xsquare from  "../../Images/x-square.svg"
 function Header(props) {
   const [searchModal, setSearchModal] = useState(false);
   const [langShow, setLangShow] = useState(false);
@@ -87,7 +88,7 @@ const menuBlock = () => {
                 </ul>
             </ul>)}
             <div className="close_menu__media" onClick={()=>menuBlock()}>
-              x
+            X
             </div>
         </div>
       <div className="hamburger_default">
@@ -150,7 +151,7 @@ const menuBlock = () => {
               />
               {hamburger ? (
                 <p className={"close_menu"} onClick={() => menuBlock()}>
-                  X
+                  <img src={xsquare} alt="" />
                 </p>
               ) : (
                 ""
@@ -219,10 +220,10 @@ const menuBlock = () => {
                 {selectTxt}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => changeLang("1", "O‘Z")}>
-                  O‘Zb
+                <Dropdown.Item onClick={() => changeLang("1", "O‘zb")}>
+                  O‘zb
                 </Dropdown.Item>
-                <Dropdown.Item onClick={() => changeLang("2", "Cyrl")}>
+                <Dropdown.Item onClick={() => changeLang("2", "Ўзб")}>
                 Ўзб 
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => changeLang("3", "Rus")}>

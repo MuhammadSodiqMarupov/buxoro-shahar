@@ -12,7 +12,7 @@ const Address = (props) => {
                     <img src={map} alt="Loading Image....."/>
                     <h2 className="manzilH2"> Manzil: 100066, Chilonzor tumani, Islom Karimov ko‘chasi 51 </h2>
                     <div className="informations">
-                    <div className="firstInfo">
+                       <div className="firstInfo">
                         <h4 className="tel"> Telefon raqamlari </h4>
                         <h5> Yuridik va jismoniy shaxslar murojaatlari uchun: murojaatlar@tashkent.uz 71-210-03-47 </h5>
                     </div>
