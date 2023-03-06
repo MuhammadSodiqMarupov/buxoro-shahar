@@ -102,11 +102,20 @@
         }
 
         p {
-          font-weight: 400;
+          font-weight: 500px;
           font-size: 16px;
           color: #2D40D9;
+        }
+        @media (max-width:400px) {
+          p{
+            color: #FFFFFF;
+          }
         }
       }
     }
   }
+}
+.ilova{
+  display: flex;
+  gap: 20px;
 }

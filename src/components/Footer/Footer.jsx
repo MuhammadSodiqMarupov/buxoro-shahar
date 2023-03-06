@@ -4,6 +4,9 @@ import twitter from "../../Images/twitter 1.svg"
 import facebook from "../../Images/facebook 1.svg"
 import youtube from "../../Images/youtube 1.svg"
 import instagram from "../../Images/instagram 1.svg"
+import playmarket from "../../Images/icon/playmarket.svg"
+import appstore from "../../Images/icon/appstore.svg"
+
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom"
 function Footer() {
@@ -35,7 +38,14 @@ function Footer() {
                            <h1> E-mail </h1>
                            <p> Shofirkon.@exat.uz </p>
                        </div>
-
+                        <div className="ilova">
+                       <Link to={""}>
+                       <img src={appstore} alt="aps" />
+                       </Link>
+                       <Link to={""}>
+                       <img src={playmarket} alt="aps" />
+                       </Link>
+                        </div>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ function Request() {
         <div className="request">
             <div className="requestContainer">
                 <div className="myCard">
-                    <h1> Buxoro hokimligiga murojaat yuborish </h1>
+                    <h1> Shofirkon hokimligiga murojaat yuborish </h1>
                     <p> Kengash uchun ariza, taklif, shikoyat va boshqa turdagi murojjatingiz bo'lsa bizga yozing. Murojaatingiz albatta hokimlik tomonidan ko'rib chiqiladi. Tashakkur! </p>
                     <div className="fio">
                         <h3> FIO* </h3>
@@ -32,7 +32,8 @@ function Request() {
                     <div className="lastBtns">
                         <h3>Mavzuga oid fayl</h3>
                         <div className="btn__box">
-                                <input type="file" id="input__file" hidden/>
+                                {/* <input type="file" id="input__file" hidden/> */}
+                                {/* vaqtinchalik */}
                                 <button onClick={()=>{
                                     document.getElementById("input__file").click();
                                 }} className="file">
