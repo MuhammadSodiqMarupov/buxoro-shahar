@@ -19,13 +19,13 @@ const FotoGallery = ({photos, data }) => {
                 <h1 onClick={() => navigate("/gallery/video")}>VideoGaleriya</h1>
             </div>
             <div className="foto_content_api">
-            {photos.map(item=><div key={item.id} className="photo_item">
+            { photos.lenght>0? photos.map(item=><div key={item.id} className="photo_item">
                 <img src={domen+item.photos[0].imageUrl} alt="" />
                 <div className="text">
                     <div className="date">{item.photoDate}</div>
                     <div className="title">{item.title}</div>
                 </div>
-            </div>)}
+            </div>):"Ma`lumot mavjud emas!"}
           </div>
         </div>
       </div>

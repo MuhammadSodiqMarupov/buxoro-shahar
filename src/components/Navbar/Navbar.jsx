@@ -1,5 +1,5 @@
 import "./Navbar.scss"
-import Gerb from '../../Images/Gerb.svg'
+import Gerb from '../../Images/gerb1.svg'
 function Navbar({Filter}) {
     const langData = [
         {

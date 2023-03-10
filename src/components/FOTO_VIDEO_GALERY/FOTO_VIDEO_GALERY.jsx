@@ -102,7 +102,7 @@ function FotoVideoGalery(props) {
                 spaceBetween={0}
                 wrapperTag={"ul"}
               >
-                {props.videos.map((item, index) => (
+                {props.videos.length>0? props.videos.map((item, index) => (
                   <SwiperSlide
                     className={"my-slide"}
                     tag={"li"}
@@ -127,7 +127,7 @@ function FotoVideoGalery(props) {
                     <button className="date">{item.videoDate}</button>
                     <div className="descr">{item.title}</div>
                   </SwiperSlide>
-                ))}
+                )):"Ma`lumot mavjud emas!"}
               </Swiper>
             )}
           </div>

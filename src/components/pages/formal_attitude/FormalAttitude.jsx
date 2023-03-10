@@ -10,7 +10,7 @@ const FormalAttitude = ({ data}) => {
                 <div className="attitude_content">
                     <h1> Rasmiy munosabat </h1>
                     <p> “Qonun doirasida” MChJ tomonidan 2022 yil 15 avgustda viloyat hokimligiga yuborilgan № 08/15 sonli soʼrovnomaga javob berilmagani boʼyicha ijtimoiy tarmoqda eʼlon qilingan tanqidiy chiqish yuzasidan shuni maʼlum qilamizki, viloyat hokimligida 2022 yil 24 iyunь kuni oʼtkazilgan yigʼilishning 373-sonli bayoni “Qonun doirasida” MChJning pochta manziliga yuborilgan.</p>
-                    <h2> Buxoro viloyati hokimligi matbuot xizmati </h2>
+                    <h2> Shofirkon tuman hokimligi matbuot xizmati </h2>
                     <div className="attitudeCard">
                         <h5> Fikringizni yozib qoldirishingiz mumkin </h5>
                         <div className="inpes">

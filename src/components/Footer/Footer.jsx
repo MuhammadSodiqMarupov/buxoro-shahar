@@ -6,6 +6,9 @@ import youtube from "../../Images/youtube 1.svg"
 import instagram from "../../Images/instagram 1.svg"
 import playmarket from "../../Images/icon/playmarket.svg"
 import appstore from "../../Images/icon/appstore.svg"
+import {domen} from "../../headerAPI"
+import rss from "../../Images/rs.jpg"
+import znachok from "../../Images/znachok1.svg"
 
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom"
@@ -14,6 +17,9 @@ function Footer() {
     return (
         <div className="Footer">
             <div className="footerContainer">
+            <div className="znachok">
+                    <img src={znachok} alt="" />
+                    </div>
                 <div className="lastLeft">
                    <div className="top">
                         <p className="call"> Telefon </p>
@@ -46,7 +52,36 @@ function Footer() {
                        <img src={playmarket} alt="aps" />
                        </Link>
                         </div>
+                
+                <div className="rss">
+                {(localStorage.getItem("langTypeGijduvon")==1) ? 
+                                    <>
+                                        <p></p>
+                                        <a target="_black" href={`${domen}uz/rss`}><img className="rss" src={rss} alt="rss" /></a>
+                                    </>:
+                                    (localStorage.getItem("langTypeGijduvon")==2)?
+                                    <>
+                                        <p></p>
+                                        <a target="_black" href={`${domen}uzcyrl/rss`}><img className="rss" src={rss} alt="rss" /></a>
+                                    </>:
+                                    (localStorage.getItem("langTypeGijduvon")==3)?
+                                    <>
+                                        <p></p>
+                                        <a target="_black" href={`${domen}ru/rss`}><img className="rss" src={rss} alt="rss" /></a>
+                                    </>:
+                                    (localStorage.getItem("langTypeGijduvon")==4)?
+                                    <>
+                                        <p></p>
+                                        <a target="_black" href={`${domen}eng/rss`}><img className="rss" src={rss} alt="rss" /></a>
+                                    </>:
+                                    <>
+                                        <p></p>
+                                        <a target="_black" href={`${domen}uz/rss`}><img className="rss" src={rss} alt="rss" /></a>
+                                    </>
+                                }
                 </div>
+            </div>
+               
             </div>
         </div>
     );

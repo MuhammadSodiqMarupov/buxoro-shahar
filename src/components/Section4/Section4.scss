@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background-image: url("../../Images/rasmjon.jpg");
+    background-image: url("../../Images/Xizmatlar.svg");
     justify-content: space-around;
     padding: 0 20px 20px;
     padding-top: 64px;
@@ -34,12 +34,14 @@
         line-height: 28px;
         color: #FFFFFF;
       }
-      .item :hover{
+      .item:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
        p{
-        font-size: 25px;
+        font-size: 22px;
        }
        img{
-        width: 150%;
+        width: 130%;
        }
       }
     }
@@ -105,4 +107,7 @@
       }
     }
   }
+}
+.card{
+  padding-top: 15px;
 }

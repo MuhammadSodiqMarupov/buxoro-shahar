@@ -80,7 +80,7 @@ const News = ({
                 <div className="item_descr">{myNews.title}</div>
               </div>
             </div>
-            {doublesNews.map((item, index) => (
+            {doublesNews.length>0? doublesNews.map((item, index) => (
               <div key={index} className="item_part">
                 <div
                   className="first"
@@ -122,7 +122,7 @@ const News = ({
                   ""
                 )}
               </div>
-            ))}
+            )):"Ma`lumot mavjud emas"}
           </div>
           <ReactPaginate
             previousLabel={"<-"}

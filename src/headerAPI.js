@@ -9,7 +9,7 @@ const headerAPI = (url,langType)=>axios.get("https://api.shofirkon.buxoro.uz/"+u
         langType,
     }
 });
-export const domen = "https://api.buxoro.uz/"
+export const domen = "https://api.shofirkon.buxoro.uz/"
 //mani kodim emas patdagi
 
 export function getData(url, header1, header2) {

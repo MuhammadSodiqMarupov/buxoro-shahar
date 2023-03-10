@@ -1,13 +1,13 @@
 import "./Section5.scss"
 import { Link } from "react-router-dom"
 import check from "../../Images/check.svg"
-import emblem from "../../Images/Embel_Of_Uzbekistan.jpg"
-import adliya from "../../Images/adlya.jpg"
+import emblem from "../../Images/gerb.svg"
+import adliya from "../../Images/adliya1.svg.svg"
 import pmgov from "../../Images/icon/pm.gov.png"
-import openbudjet from "../../Images/icon/openbudjet.png"
-import mitsoft from "../../Images/icon/mitsoft.png"
+import openbudjet from "../../Images/openbudjet.svg"
+import mitsoft from "../../Images/Mitsoft.svg"
 import egov from "../../Images/icon/egov.png"
-import murojat from "../../Images/icon/murojat.png"
+import murojat from "../../Images/logotip.svg"
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
@@ -18,7 +18,7 @@ function Section5() {
                 <h1 className="title"> ✅ Foydali havolalar </h1>
                 <div className="bottom">
                         <a href="https://my.gov.uz/ru">
-                    <div className="card2">
+                    <div className="card2 ">
                         <LazyLoadImage className="card3" src={check} effect={"blur"}/>
                         <p> Yagona interaktiv davlat xizmatlari portali </p>
                     </div>
